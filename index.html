@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Omolola Ogunlade — Strategy. Design. Operations.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Brawler:wght@400;700&display=swap" rel="stylesheet">
+  <title>Oogun</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after {
       margin: 0;
@@ -62,140 +60,149 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
-    /* Dark overlay */
+    /* Overlay */
     .overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.52);
+      background: rgba(0,0,0,0.32);
       z-index: 1;
     }
 
-    /* Grain texture */
-    .grain {
-      position: fixed;
-      inset: -50%;
-      width: 200%;
-      height: 200%;
-      z-index: 2;
-      pointer-events: none;
-      opacity: 0.04;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
-      animation: grain-shift 0.5s steps(2) infinite;
-    }
-
-    @keyframes grain-shift {
-      0%  { transform: translate(0, 0); }
-      25% { transform: translate(-1%, 1%); }
-      50% { transform: translate(1%, -1%); }
-      75% { transform: translate(-1%, -1%); }
-      100%{ transform: translate(1%, 1%); }
-    }
-
-    /* Center content */
-    .center {
+    /* B.R.B. center overlay */
+    .brb-overlay {
       position: fixed;
       inset: 0;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .brb-text {
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(4rem, 12vw, 10rem);
+      font-weight: 400;
+      color: #fff;
+    
+      mix-blend-mode: difference;
+      user-select: none;
+    }
+
+    /* Nav */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 10;
+      padding: 32px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .nav-name {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.75);
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .nav-name:hover { color: #fff; }
+
+    .nav-right {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+    }
+
+    /* Center nav links */
+    .center-links {
+      position: fixed;
+      inset: 0;
+      z-index: 5;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 0;
+      gap: 24px;
     }
 
-    /* Nav links */
-    .nav-link {
-      display: block;
-      font-family: 'Brawler', Georgia, serif;
-      font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+    .center-links a {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1rem, 2.2vw, 1.5rem);
       font-weight: 400;
       color: rgba(255,255,255,0.82);
       text-decoration: none;
-      letter-spacing: 0.01em;
-      padding: 0.55em 1.2em;
+      letter-spacing: 0.06em;
       position: relative;
-      transition: color 0.4s ease;
-      text-align: center;
-      opacity: 0;
-      transform: translateY(16px);
-      animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) forwards;
+      transition: color 0.3s ease;
     }
 
-    .nav-link:nth-child(1) { animation-delay: 0.2s; }
-    .nav-link:nth-child(2) { animation-delay: 0.45s; }
-
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .nav-link::after {
+    .center-links a::after {
       content: '';
       position: absolute;
-      bottom: 0.45em;
-      left: 1.2em;
-      right: 1.2em;
+      bottom: -4px;
+      left: 0;
+      width: 0;
       height: 1px;
-      background: rgba(255,255,255,0.3);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), background 0.3s ease;
+      background: #fff;
+      transition: width 0.4s cubic-bezier(0.16,1,0.3,1);
     }
 
-    .nav-link:hover {
+    .center-links a:hover {
       color: #fff;
     }
 
-    .nav-link:hover::after {
-      transform: scaleX(1);
-      background: rgba(255,255,255,0.75);
+    .center-links a:hover::after {
+      width: 100%;
     }
 
-    /* Divider between links */
-    .divider {
+    .link-divider {
       width: 1px;
-      height: 1.6em;
-      background: rgba(255,255,255,0.18);
-      opacity: 0;
-      animation: fadeIn 0.6s ease 0.65s forwards;
+      height: 40px;
+      background: rgba(255,255,255,0.2);
     }
 
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-
-    /* Small mark top-left */
-    .wordmark {
+    /* Footer */
+    footer {
       position: fixed;
-      top: 2.2rem;
-      left: 2.4rem;
+      bottom: 0;
+      left: 0;
+      right: 0;
       z-index: 10;
+      padding: 28px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .footer-location {
       font-family: 'DM Mono', monospace;
+      font-size: 10px;
       font-weight: 300;
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.38);
-      letter-spacing: 0.22em;
+      letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.4);
       text-transform: uppercase;
-      opacity: 0;
-      animation: fadeIn 1s ease 0.8s forwards;
     }
 
-    /* Small year bottom-right */
-    .year {
-      position: fixed;
-      bottom: 2.2rem;
-      right: 2.4rem;
-      z-index: 10;
+    .footer-copy {
       font-family: 'DM Mono', monospace;
+      font-size: 10px;
       font-weight: 300;
-      font-size: 0.65rem;
+      letter-spacing: 0.12em;
       color: rgba(255,255,255,0.3);
-      letter-spacing: 0.18em;
-      opacity: 0;
-      animation: fadeIn 1s ease 1s forwards;
     }
-  
   </style>
 </head>
 <body>
@@ -203,50 +210,49 @@
   <div class="cursor" id="cursor"></div>
   <div class="cursor-ring" id="cursorRing"></div>
 
+  <!-- Video background -->
   <div class="video-bg">
-    <!--
-      SWAP THIS SOURCE for your own video file.
-      Recommended: .mp4 + .webm, no audio, 1920×1080, looped.
-      Example: <source src="assets/showreel.mp4" type="video/mp4" />
-    -->
     <video autoplay muted loop playsinline>
-      <source src="https://res.cloudinary.com/djmffrvpg/video/upload/v1778869010/om_video_banner_flfy3w.mp4" type="video/mp4" />
-      <script>document.querySelector('video').playbackRate = 1.5;</script>
+      <source src="https://res.cloudinary.com/djmffrvpg/video/upload/v1781802416/brb_index-2_oufnwf.mp4" type="video/mp4" />
     </video>
   </div>
 
+  <!-- Dark overlay -->
   <div class="overlay"></div>
-  <div class="grain"></div>
 
-  <span class="wordmark">Omolola Ogunlade</span>
+  <!-- B.R.B. centered text -->
+  <div class="brb-overlay">
+    <span class="brb-text">B.R.B</span>
+  </div>
 
-  <nav class="center">
-    <a href="s-index.html" class="nav-link">Strategy &amp; Operations</a>
-    <div class="divider"></div>
-    <a href="d-index.html" class="nav-link">Design Language</a>
+  <!-- Nav -->
+  <nav>
+    <a href="/" class="nav-name">Omolola Ogunlade</a>
+    <span class="nav-right">© 2026</span>
   </nav>
 
 
   <script>
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursorRing');
-    let rx = 0, ry = 0;
-    let cx = window.innerWidth / 2, cy = window.innerHeight / 2;
+    let mx = 0, my = 0;
 
     document.addEventListener('mousemove', e => {
-      cx = e.clientX; cy = e.clientY;
-      cursor.style.left = cx + 'px';
-      cursor.style.top = cy + 'px';
+      mx = e.clientX;
+      my = e.clientY;
+      cursor.style.left = mx + 'px';
+      cursor.style.top = my + 'px';
     });
 
-    function lerpRing() {
-      rx += (cx - rx) * 0.12;
-      ry += (cy - ry) * 0.12;
-      ring.style.left = rx + 'px';
-      ring.style.top = ry + 'px';
-      requestAnimationFrame(lerpRing);
+    let ringX = 0, ringY = 0;
+    function animateRing() {
+      ringX += (mx - ringX) * 0.12;
+      ringY += (my - ringY) * 0.12;
+      ring.style.left = ringX + 'px';
+      ring.style.top = ringY + 'px';
+      requestAnimationFrame(animateRing);
     }
-    lerpRing();
+    animateRing();
 
     document.querySelectorAll('a').forEach(el => {
       el.addEventListener('mouseenter', () => {
