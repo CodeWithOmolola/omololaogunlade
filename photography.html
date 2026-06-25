@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photography — Omolola Ogunlade</title>
+  <link rel="stylesheet" href="main.css">
+  <style>
+    /* ── Gallery overrides for this page ── */
+    .cs-gallery {
+      height: auto;
+      background: var(--ash);
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .cs-gallery-sticky {
+      position: relative;
+      height: auto;
+      overflow: visible;
+      background: transparent;
+      display: block;
+    }
+
+    .gallery-card {
+      position: sticky;
+      top: 40px;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
+      margin-bottom: 24px;
+      transform-origin: top center;
+    }
+
+    .gallery-card:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Each card stacks higher than the last */
+    .gallery-card:nth-child(1) {
+      top: 40px;
+      z-index: 1;
+    }
+
+    .gallery-card:nth-child(2) {
+      top: 60px;
+      z-index: 2;
+    }
+
+    .gallery-card:nth-child(3) {
+      top: 80px;
+      z-index: 3;
+    }
+
+    .gallery-card:nth-child(4) {
+      top: 100px;
+      z-index: 4;
+    }
+
+    .gallery-card:nth-child(5) {
+      top: 120px;
+      z-index: 5;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  </style>
+</head>
+
+<body class="cs-page">
+
+  <nav class="cs-nav">
+    <a href="main.html" class="cs-nav-inner">
+      <span>←</span><span>All Work</span>
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="cs-hero">
+    <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1778872397/20_hhpzp9.png" class="cs-hero-img"
+      alt="Hello Grace cover">
+    <div class="cs-hero-overlay">
+      <div class="cs-tag" style="color: #fff">Image Making</div>
+      <h1 class="cs-title" style="color: #fff">Photography</h1>
+    </div>
+
+  </div>
+
+  <!-- DESCRIPTION -->
+  <section class="cs-desc">
+    <div class="cs-desc-meta">
+      <div class="cs-meta-item">
+        <label>Role</label>
+        <p>Editorial Director · Image Maker</p>
+      </div>
+      <div class="cs-meta-item">
+        <label>Type</label>
+        <p>Editorial · Commercial</p>
+      </div>
+      <div class="cs-meta-item">
+        <label>Tools</label>
+        <p>DSLR · Film · Video</p>
+      </div>
+
+    </div>
+    <div class="cs-desc-text">
+      <p>
+        (Header Image) <strong>'Hello Grace'</strong> - Ìri's Journal Editorial Cover Shoot, 2023.
+        <br>Shot on location in Chicago, IL.
+        <br>Model: Yngride Jeanphilippe.
+        <br>Photographer &amp; Garment Designer: Omolola Ogunlade.
+      </p>
+      <p>
+        <strong>'Don't Touch My F*cking Hair'</strong> - 2023.
+        <br>Shot on location in Chicago, IL.
+        <br>Model: Ra'Niya Jones.
+        <br>Makeup Artist: Kaylin Castellano.
+        <br>Photographer &amp; Styling: Omolola Ogunlade.
+      </p>
+      <p>
+        <strong>'The Pink Lady'</strong> - 2023.
+        <br>Shot on location in Chicago, IL.
+        <br>Model: Mya Shields.
+        <br>Photographer &amp; Styling: Omolola Ogunlade.
+      </p>
+      <p>
+        <strong>'Blue Velvet'</strong> - 2023.
+        <br>Shot on location in Chicago, IL.
+        <br>Model: Michelle.
+        <br>Makeup Artist: Liz.
+        <br>Photographer &amp; Garment Designer: Omolola Ogunlade.
+      </p>
+      <p>
+        <strong>'Hello Grace'</strong> - Ìri's Journal Editorial Cover Shoot, 2023.
+        <br>Shot on location in Chicago, IL.
+        <br>Model: Yngride Jeanphilippe.
+        <br>Photographer &amp; Styling: Omolola Ogunlade.
+      </p>
+    </div>
+  </section>
+
+  <!-- GALLERY — stacking cards on scroll -->
+  <div class="cs-gallery" id="cs-gallery">
+    <div class="cs-gallery-sticky" id="gallery-sticky">
+
+      <div class="gallery-card" id="gcard-0">
+        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1778872397/19_umppks.png" alt="DTMFH">
+      </div>
+
+      <div class="gallery-card" id="gcard-1">
+        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1778872396/18_rk3rmc.png" alt="The Pink Lady">
+      </div>
+
+      <div class="gallery-card" id="gcard-2">
+        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1778872397/20_hhpzp9.png" alt="Hello Grace">
+      </div>
+
+      <div class="gallery-card" id="gcard-3">
+        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1778872398/21_f7s8vp.png" alt="Blue Velvet">
+      </div>
+
+      <div class="gallery-card" id="gcard-4">
+        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1781622099/dip-01_lrcczg.png"
+          alt="Hello Grace">
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MORE WORK -->
+  <section class="cs-more">
+    <a href="main.html" class="btn-back">View All Work</a>
+  </section>
+
+  <script>
+    // As you scroll, each card sticks and the next one slides up over it
+    // Scale down cards that are "past" to give the stacking depth effect
+    const cards = document.querySelectorAll('.gallery-card');
+
+    window.addEventListener('scroll', () => {
+      cards.forEach((card, i) => {
+        const rect = card.getBoundingClientRect();
+        const top = parseInt(getComputedStyle(card).top); // sticky top value
+        const distancePastSticky = top - rect.top;
+
+        if (distancePastSticky > 0) {
+          // card is stuck — scale it down as the next one approaches
+          const scale = Math.max(0.88, 1 - distancePastSticky * 0.0004);
+          const brightness = Math.max(0.6, 1 - distancePastSticky * 0.0008);
+          card.style.transform = `scale(${scale})`;
+          card.style.filter = `brightness(${brightness})`;
+        } else {
+          card.style.transform = 'scale(1)';
+          card.style.filter = 'brightness(1)';
+        }
+      });
+    }, { passive: true });
+  </script>
+
+</body>
+
+</html>

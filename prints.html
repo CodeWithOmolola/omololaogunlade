@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prints — Omolola Ogunlade</title>
+  <link rel="stylesheet" href="main.css">
+  <style>
+    /* ── Gallery overrides for this page ── */
+    .cs-gallery {
+      height: auto;
+      background: var(--ash);
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .cs-gallery-sticky {
+      position: relative;
+      height: auto;
+      overflow: visible;
+      background: transparent;
+      display: block;
+    }
+
+    .gallery-card {
+      position: sticky;
+      top: 40px;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
+      margin-bottom: 24px;
+      transform-origin: top center;
+    }
+
+    .gallery-card:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Each card stacks higher than the last */
+    .gallery-card:nth-child(1) {
+      top: 40px;
+      z-index: 1;
+    }
+
+    .gallery-card:nth-child(2) {
+      top: 60px;
+      z-index: 2;
+    }
+
+    .gallery-card:nth-child(3) {
+      top: 80px;
+      z-index: 3;
+    }
+
+    .gallery-card:nth-child(4) {
+      top: 100px;
+      z-index: 4;
+    }
+
+    .gallery-card:nth-child(5) {
+      top: 120px;
+      z-index: 5;
+    }
+
+    .gallery-card:nth-child(6) {
+      top: 140px;
+      z-index: 6;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  </style>
+</head>
+
+<body class="cs-page">
+
+  <nav class="cs-nav">
+    <a href="main.html" class="cs-nav-inner">
+      <span>←</span><span>All Work</span>
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="cs-hero">
+    <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1781642160/smih-01_wsaa5c.png" class="cs-hero-img"
+      alt="Studio Museum In Harlem cover">
+    <div class="cs-hero-overlay">
+      <div class="cs-tag" style="color:#fff">Graphic Design</div>
+      <h1 class="cs-title" style="color:#fff">Prints</h1>
+    </div>
+
+  </div>
+
+  <!-- DESCRIPTION -->
+  <section class="cs-desc">
+    <div class="cs-desc-meta">
+      <div class="cs-meta-item">
+        <label>Type</label>
+        <p>Graphic Design</p>
+      </div>
+      <div class="cs-meta-item">
+        <label>Tools</label>
+        <p>Adobe Creative Suite
+          <br> Affinity Designer
+        </p>
+      </div>
+    </div>
+    <div class="cs-desc-text">
+      <p>
+        <strong>'Knicks Blu' (ether)</strong>, 2026, Adobe Illustrator &amp; Affinity Designer..
+        <br>
+        <strong>Studio Museum in Harlem Poster</strong>, 2026, Adobe Illustrator &amp; Affinity Designer.
+        <br>
+        <strong>Nosferatu Marketing</strong>, 2026, Affinity Designer .
+        <br>
+        <strong>Bauhaus</strong>, 2025, Adobe Illustrator.
+        <br>
+        <strong>MOMA Fragmented Realities</strong>, 2025, Adobe Illustrator, Phototoshop &amp; InDesign.
+        <br>
+        <strong>Our Father Poster</strong>, 2025, Affinity Designer.
+      </p>
+    </div>
+  </section>
+
+  <!-- GALLERY — stacking cards on scroll -->
+  <div class="cs-gallery" id="cs-gallery">
+    <div class="cs-gallery-sticky" id="gallery-sticky">
+      <div class="gallery-card" id="gcard-0">
+        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1781929937/TMTM_zwpvt2.jpg" alt="'Knicks Blu' Poster">
+      </div>
+      <div class="gallery-card" id="gcard-1">
+        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1781642160/smih-01_wsaa5c.png"
+          alt="Studio Museum In Harlem">
+      </div>
+
+      <div class="gallery-card" id="gcard-2">
+        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1781549740/nos-bus_jitfmn.jpg"
+          alt="Nosferatu">
+      </div>
+
+      <div class="gallery-card" id="gcard-3">
+        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1781189244/BAUHAUS-Image_Edited_gfoqjn.png"
+          alt="Bauhaus">
+      </div>
+
+      <div class="gallery-card" id="gcard-4">
+        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1781549182/MOMA-Print-Poster-o_u8j4ti.png"
+          alt="MOMA">
+      </div>
+
+      <div class="gallery-card" id="gcard-5">
+        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1781548872/Our-Father-Brick_puo6sr.png"
+          alt="Our Fat">
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MORE WORK -->
+  <section class="cs-more">
+    <a href="main.html" class="btn-back">View All Work</a>
+  </section>
+
+  <script>
+    // As you scroll, each card sticks and the next one slides up over it
+    // Scale down cards that are "past" to give the stacking depth effect
+    const cards = document.querySelectorAll('.gallery-card');
+
+    window.addEventListener('scroll', () => {
+      cards.forEach((card, i) => {
+        const rect = card.getBoundingClientRect();
+        const top = parseInt(getComputedStyle(card).top); // sticky top value
+        const distancePastSticky = top - rect.top;
+
+        if (distancePastSticky > 0) {
+          // card is stuck — scale it down as the next one approaches
+          const scale = Math.max(0.88, 1 - distancePastSticky * 0.0004);
+          const brightness = Math.max(0.6, 1 - distancePastSticky * 0.0008);
+          card.style.transform = `scale(${scale})`;
+          card.style.filter = `brightness(${brightness})`;
+        } else {
+          card.style.transform = 'scale(1)';
+          card.style.filter = 'brightness(1)';
+        }
+      });
+    }, { passive: true });
+  </script>
+
+</body>
+
+</html>

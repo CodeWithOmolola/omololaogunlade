@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kodo - Omolola Ogunlade</title>
+  <link rel="stylesheet" href="main.css">
+  <style>
+    /* ── Gallery overrides for this page ── */
+    .cs-gallery {
+      height: auto;
+      background: var(--ash);
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .cs-gallery-sticky {
+      position: relative;
+      height: auto;
+      overflow: visible;
+      background: transparent;
+      display: block;
+    }
+
+    .gallery-card {
+      position: sticky;
+      top: 40px;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
+      margin-bottom: 24px;
+      transform-origin: top center;
+    }
+
+    .gallery-card:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Each card stacks higher than the last */
+    .gallery-card:nth-child(1) {
+      top: 40px;
+      z-index: 1;
+    }
+
+    .gallery-card:nth-child(2) {
+      top: 60px;
+      z-index: 2;
+    }
+
+    .gallery-card:nth-child(3) {
+      top: 80px;
+      z-index: 3;
+    }
+
+    .gallery-card:nth-child(4) {
+      top: 100px;
+      z-index: 4;
+    }
+
+    .gallery-card:nth-child(5) {
+      top: 120px;
+      z-index: 5;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  </style>
+</head>
+
+<body class="cs-page">
+
+  <nav class="cs-nav">
+    <a href="main.html" class="cs-nav-inner">
+      <span>←</span><span>All Work</span>
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="cs-hero">
+    <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1770324261/Kodo-Open-Pack_iocrnc.png"
+      class="cs-hero-img" alt="Kodo cover">
+    <div class="cs-hero-overlay">
+      <div class="cs-tag">Brand Identity · Packaging Design · GTM</div>
+      <h1 class="cs-title">Kodo</h1>
+    </div>
+
+  </div>
+
+  <!-- DESCRIPTION -->
+  <section class="cs-desc">
+    <div class="cs-desc-meta">
+      <div class="cs-meta-item">
+        <label>Kodo</label>
+        <p>Premium Japanese Incense & Wellness Brand</p>
+      </div>
+      <div class="cs-meta-item">
+        <label>Category</label>
+        <p>Wellness & Lifestyle Brand</p>
+      </div>
+      <div class="cs-meta-item">
+        <label>Deliverables</label>
+        <p>Brand Identity · Packaging Design · Product Line Strategy · Market Positioning</p>
+      </div>
+      <div class="cs-meta-item">
+        <label>Tools</label>
+        <p>Adobe Creative Suite · Market Research</p>
+      </div>
+    </div>
+    <div class="cs-desc-text">
+      <p>
+        Kodo is a premium wellness brand rooted in 間 (ma) — the Japanese concept of
+        meaningful space between moments. The global wellness market is flooded with
+        culturally derived aesthetics stripped of the philosophy that makes them
+        meaningful. Kodo works differently: direct partnerships with Japanese incense
+        makers, packaging designed by Japanese artists, transparent ingredient sourcing,
+        and a portion of profits reinvested into traditional craft preservation.
+        <br><br>
+        The product line spans premium incense sticks, fragrance oils, and ceramic
+        holders crafted by Japanese pottery artists — each piece signed by its maker.
+        Every product ships with a context card explaining the scent's historical
+        significance, traditional ceremonial use, and the artisan behind it. The
+        design question wasn't how to make something Japanese-inspired. It was how
+        to build a brand that earns the right to honor a tradition it didn't originate.
+
+      </p>
+    </div>
+  </section>
+
+  <section class="cs-gtm">
+    <p class="cs-gtm-eyebrow">Go-to-Market Strategy</p>
+    <div class="cs-gtm-grid">
+
+      <div class="cs-gtm-col">
+        <p class="cs-gtm-col-label">Launch</p>
+        <p class="cs-gtm-col-title">Cherry blossom season. DTC first.</p>
+        <p class="cs-gtm-col-body">Limited-edition sakura collection launches direct-to-consumer via Shopify during
+          cherry blossom season — timed to cultural relevance, not retail cycles. Year 2 expands to boutique wellness
+          stores and museum gift shops only.</p>
+        <div class="cs-gtm-tags">
+          <span class="cs-gtm-tag">DTC year 1</span>
+          <span class="cs-gtm-tag">Museum retail year 2</span>
+          <span class="cs-gtm-tag">No mass market</span>
+        </div>
+      </div>
+
+      <div class="cs-gtm-col">
+        <p class="cs-gtm-col-label">Market Approach</p>
+        <p class="cs-gtm-col-title">Education as the content strategy.</p>
+        <p class="cs-gtm-col-body">Documentary-style videos featuring partner artisans in Japan, split for TikTok. Blog
+          content on Japanese aesthetic philosophy. Email newsletters teaching incense ceremony basics. The brand builds
+          authority by teaching, not just selling.</p>
+        <div class="cs-gtm-tags">
+          <span class="cs-gtm-tag">Artisan documentary content</span>
+          <span class="cs-gtm-tag">TikTok short-form</span>
+          <span class="cs-gtm-tag">Wellness influencers</span>
+        </div>
+      </div>
+
+      <div class="cs-gtm-col">
+        <p class="cs-gtm-col-label">Pricing</p>
+        <p class="cs-gtm-col-title">$28–85 across the product line.</p>
+        <p class="cs-gtm-col-body">Incense sticks at $28–32, fragrance oils at $38–48, and ceramic holders at $45–85 —
+          each signed by the maker. Premium pricing that reflects ethical sourcing and artisan partnership, not just
+          packaging.</p>
+        <div class="cs-gtm-tags">
+          <span class="cs-gtm-tag">Incense — $28–32</span>
+          <span class="cs-gtm-tag">Fragrance oils — $38–48</span>
+          <span class="cs-gtm-tag">Ceramic holders — $45–85</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GALLERY — stacking cards on scroll -->
+  <div class="cs-gallery" id="cs-gallery">
+    <div class="cs-gallery-sticky" id="gallery-sticky">
+
+      <div class="gallery-card" id="gcard-0">
+        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1781618084/kodo_cover_hfnajw.png"
+          alt="Kodo image 1">
+      </div>
+
+      <div class="gallery-card" id="gcard-1">
+        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1770324201/Kodo-Packs_n7oasd.png"
+          alt="Kodo image 2">
+      </div>
+
+      <div class="gallery-card" id="gcard-2">
+        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1770322309/Kodo-Card_lvbk9q.png"
+          alt="Kodo image 3">
+      </div>
+
+      <div class="gallery-card" id="gcard-3">
+        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1770324232/Fragrance-Oils-Kodo_he6vxr.png"
+          alt="Kodo image 4">
+      </div>
+
+      <div class="gallery-card" id="gcard-4">
+        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1770329195/Sticks-Incense_tn3udj.png"
+          alt="Kodo image 4">
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MORE WORK -->
+  <section class="cs-more">
+    <a href="main.html" class="btn-back">View All Work</a>
+  </section>
+
+  <script>
+    // As you scroll, each card sticks and the next one slides up over it
+    // Scale down cards that are "past" to give the stacking depth effect
+    const cards = document.querySelectorAll('.gallery-card');
+
+    window.addEventListener('scroll', () => {
+      cards.forEach((card, i) => {
+        const rect = card.getBoundingClientRect();
+        const top = parseInt(getComputedStyle(card).top); // sticky top value
+        const distancePastSticky = top - rect.top;
+
+        if (distancePastSticky > 0) {
+          // card is stuck — scale it down as the next one approaches
+          const scale = Math.max(0.88, 1 - distancePastSticky * 0.0004);
+          const brightness = Math.max(0.6, 1 - distancePastSticky * 0.0008);
+          card.style.transform = `scale(${scale})`;
+          card.style.filter = `brightness(${brightness})`;
+        } else {
+          card.style.transform = 'scale(1)';
+          card.style.filter = 'brightness(1)';
+        }
+      });
+    }, { passive: true });
+  </script>
+
+</body>
+
+</html>

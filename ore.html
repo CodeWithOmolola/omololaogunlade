@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ore Mi — Omolola Ogunlade</title>
+  <link rel="stylesheet" href="main.css">
+  <style>
+    /* ── Gallery overrides for this page ── */
+    .cs-gallery {
+      height: auto;
+      background: var(--ash);
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .cs-gallery-sticky {
+      position: relative;
+      height: auto;
+      overflow: visible;
+      background: transparent;
+      display: block;
+    }
+
+    .gallery-card {
+      position: sticky;
+      top: 40px;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
+      margin-bottom: 24px;
+      transform-origin: top center;
+    }
+
+    .gallery-card:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Each card stacks higher than the last */
+    .gallery-card:nth-child(1) {
+      top: 40px;
+      z-index: 1;
+    }
+
+    .gallery-card:nth-child(2) {
+      top: 60px;
+      z-index: 2;
+    }
+
+    .gallery-card:nth-child(3) {
+      top: 80px;
+      z-index: 3;
+    }
+
+    .gallery-card:nth-child(4) {
+      top: 100px;
+      z-index: 4;
+    }
+
+    .gallery-card:nth-child(5) {
+      top: 120px;
+      z-index: 5;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  </style>
+</head>
+
+<body class="cs-page">
+
+  <nav class="cs-nav">
+    <a href="main.html" class="cs-nav-inner">
+      <span>←</span><span>All Work</span>
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="cs-hero">
+    <img src="https://res.cloudinary.com/dio49rnxg/image/upload/v1738448138/cover_imvevv.png" class="cs-hero-img"
+      alt="Ore Mi cover">
+    <div class="cs-hero-overlay">
+      <div class="cs-tag">Product Design · Development · Creative Direction</div>
+      <h1 class="cs-title">Ọrẹ Mi</h1>
+    </div>
+
+  </div>
+
+  <!-- DESCRIPTION -->
+  <section class="cs-desc">
+    <div class="cs-desc-meta">
+      <div class="cs-meta-item">
+        <label>Ọrẹ Mi</label>
+        <p>Editorial & Visual Campaign — indstndrd (now ether)</p>
+      </div>
+      <div class="cs-meta-item">
+        <label>Category</label>
+        <p>Creative Direction · Cultural Strategy</p>
+      </div>
+      <div class="cs-meta-item">
+        <label>Deliverables</label>
+        <p>Editorial Series · Visual Campaign · Copy & Concept Development</p>
+      </div>
+      <div class="cs-meta-item">
+        <label>Tools</label>
+        <p>Adobe Creative Suite</p>
+      </div>
+    </div>
+    <div class="cs-desc-text">
+      <p>
+        Ọrẹ Mi is an editorial and visual campaign created in partnership with indstndrd (now Ether), exploring what it
+        means to name yourself in a world that's always trying to do it for you. The name draws from the Yoruba phrase
+        for "my friend," and the series pulls heavily from graffiti culture — not as aesthetic, but as philosophy.
+        Graffiti is an act of presence, a claim to space that wasn't offered. That energy shapes everything here: the
+        idea that the labels we wear are temporary markers, honest about their own incompleteness, always making way for
+        what comes next.
+        <br><br>
+        The design approach mirrors the concept, fluid, layered, and intentional. Nothing tries to force a neat
+        category because the whole point is that one doesn't exist. The project also traces the brand's own evolution:
+        indstndrd became ether mid-series, which ended up being the thesis in real time. Labels shift as the story does.
+        <br><br><a href="https://madebyether.com">ether</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- GALLERY — stacking cards on scroll -->
+  <div class="cs-gallery" id="cs-gallery">
+    <div class="cs-gallery-sticky" id="gallery-sticky">
+
+      <div class="gallery-card" id="gcard-0">
+        <img src="https://res.cloudinary.com/dio49rnxg/image/upload/v1738453626/ore-mi-five_suoizu.png"
+          alt="Ore Mi image 1">
+      </div>
+
+      <div class="gallery-card" id="gcard-1">
+        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1772221729/indstndrd_-_14_bdygyb.png"
+          alt="Ore Mi image 2">
+      </div>
+
+      <div class="gallery-card" id="gcard-2">
+        <img src="https://res.cloudinary.com/dio49rnxg/image/upload/v1738451723/ore-mi-3_urdcxb.png"
+          alt="Ore Mi image 3">
+      </div>
+
+      <div class="gallery-card" id="gcard-3">
+        <img
+          src="https://res.cloudinary.com/djmffrvpg/image/upload/v1772223588/Screenshot_2026-02-27_at_3.19.31_PM_eqakzk.png"
+          alt="Ore Mi image 4">
+      </div>
+
+      <div class="gallery-card" id="gcard-4">
+        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1772221720/indstndrd_-_15_twjcgz.png"
+          alt="Ore Mi image 4">
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MORE WORK -->
+  <section class="cs-more">
+    <a href="main.html" class="btn-back">View All Work</a>
+  </section>
+
+  <script>
+    // As you scroll, each card sticks and the next one slides up over it
+    // Scale down cards that are "past" to give the stacking depth effect
+    const cards = document.querySelectorAll('.gallery-card');
+
+    window.addEventListener('scroll', () => {
+      cards.forEach((card, i) => {
+        const rect = card.getBoundingClientRect();
+        const top = parseInt(getComputedStyle(card).top); // sticky top value
+        const distancePastSticky = top - rect.top;
+
+        if (distancePastSticky > 0) {
+          // card is stuck — scale it down as the next one approaches
+          const scale = Math.max(0.88, 1 - distancePastSticky * 0.0004);
+          const brightness = Math.max(0.6, 1 - distancePastSticky * 0.0008);
+          card.style.transform = `scale(${scale})`;
+          card.style.filter = `brightness(${brightness})`;
+        } else {
+          card.style.transform = 'scale(1)';
+          card.style.filter = 'brightness(1)';
+        }
+      });
+    }, { passive: true });
+  </script>
+
+</body>
+
+</html>

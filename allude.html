@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Allude — Omolola Ogunlade</title>
+  <link rel="stylesheet" href="main.css">
+  <style>
+    .cs-gallery {
+      height: auto;
+      background: var(--ash);
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .cs-gallery-sticky {
+      position: relative;
+      height: auto;
+      overflow: visible;
+      background: transparent;
+      display: block;
+    }
+
+    .gallery-card {
+      position: sticky;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
+      margin-bottom: 24px;
+      transform-origin: top center;
+    }
+
+    .gallery-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .gallery-card:nth-child(1) {
+      top: 40px;
+      z-index: 1;
+    }
+
+    .gallery-card:nth-child(2) {
+      top: 60px;
+      z-index: 2;
+    }
+
+    .gallery-card:nth-child(3) {
+      top: 80px;
+      z-index: 3;
+    }
+
+    .gallery-card:nth-child(4) {
+      top: 100px;
+      z-index: 4;
+    }
+
+    .gallery-card:nth-child(5) {
+      top: 120px;
+      z-index: 5;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Allude device frame */
+    .allude-frame {
+      width: 100%;
+      max-width: 860px;
+      background: #0a0a0a;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 0 1.5px rgba(255, 255, 255, 0.08);
+    }
+
+    .allude-frame-bar {
+      background: #111;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .allude-frame-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .allude-frame-screen {
+      width: 100%;
+      /* height set by JS after measuring */
+      background: #1a1a2e;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .allude-frame-screen iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 580px;
+      height: 380px;
+      border: none;
+      display: block;
+      transform-origin: top left;
+    }
+  </style>
+</head>
+
+<body class="cs-page">
+
+  <nav class="cs-nav">
+    <a href="main.html" class="cs-nav-inner">
+      <span>←</span><span>All Work</span>
+    </a>
+  </nav>
+
+  <div class="cs-hero">
+    <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1778543864/TWITTER_X_GOOGLE-Model3blue_hixhjv.png"
+      class="cs-hero-img" alt="Allude cover">
+    <div class="cs-hero-overlay">
+      <div class="cs-tag">Product Design · Consumer Technology · GTM</div>
+      <h1 class="cs-title">Allude</h1>
+    </div>
+  </div>
+
+  <section class="cs-desc">
+    <div class="cs-desc-meta">
+      <div class="cs-meta-item"><label>Allude</label>
+        <p>Voice Assistant Device Bridging AI and Social Media</p>
+      </div>
+      <div class="cs-meta-item"><label>Category</label>
+        <p>Consumer Technology</p>
+      </div>
+      <div class="cs-meta-item"><label>Deliverables</label>
+        <p>Product Design · Product Development · Strategy · Market Positioning</p>
+      </div>
+      <div class="cs-meta-item"><label>Tools</label>
+        <p>AutoCAD · Figma · Market Research</p>
+      </div>
+    </div>
+    <div class="cs-desc-text">
+      <p>
+        Allude is a product exploring what happens when Google and X build
+        hardware together. The premise: 4.9 billion people use social media, but every
+        current AI assistant ignores it as a knowledge layer. Allude bridges that gap,
+        a keychain-sized device with a dual-screen design and a shake interface borrowed
+        from the Magic 8 Ball. Shake twice for personalized social insights via X's data.
+        Shake three times for factual responses via Google's knowledge base. No tutorial
+        needed. The interaction model is one three generations already know.
+        <br><br>
+        The concept spans hardware design, platform-native API integration, and a
+        go-to-market strategy built around nostalgia as interface design. The core
+        question: what does a social-native AI device look like when the phone stays
+        in your pocket and a dedicated layer surfaces the pulse?
+      </p>
+    </div>
+  </section>
+
+  <!-- HORIZONTAL EMBED — Allude device -->
+  <section class="cs-embed cs-embed-horizontal">
+    <div class="cs-embed-label"><span>Live Prototype</span></div>
+    <div class="allude-frame">
+      <div class="allude-frame-bar">
+        <span class="allude-frame-dot" style="background:#ff5f57;"></span>
+        <span class="allude-frame-dot" style="background:#ffbd2e;"></span>
+        <span class="allude-frame-dot" style="background:#28c840;"></span>
+      </div>
+      <div class="allude-frame-screen" id="allude-frame-screen">
+        <iframe id="allude-iframe" src="allude-ux.html" title="Allude prototype" allow="fullscreen" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-gtm">
+    <p class="cs-gtm-eyebrow">Go-to-Market Strategy</p>
+    <div class="cs-gtm-grid">
+
+      <div class="cs-gtm-col">
+        <p class="cs-gtm-col-label">Launch</p>
+        <p class="cs-gtm-col-title">Google I/O. Then let X do the rest.</p>
+        <p class="cs-gtm-col-body">Announced as experimental hardware at Google I/O, followed by a limited beta to
+          early adopters on X — generating organic buzz through unboxing content and UGC before wide
+          release.</p>
+        <div class="cs-gtm-tags">
+          <span class="cs-gtm-tag">Google I/O debut</span>
+          <span class="cs-gtm-tag">Google Store</span>
+          <span class="cs-gtm-tag">X Blue bundle</span>
+        </div>
+      </div>
+
+      <div class="cs-gtm-col">
+        <p class="cs-gtm-col-label">Market Approach</p>
+        <p class="cs-gtm-col-title">Nostalgia as the campaign creative.</p>
+        <p class="cs-gtm-col-body">Lead with the Magic 8 Ball heritage as proof of a proven interaction model.
+          TikTok-first content showing real use cases, influencer partnerships demonstrating seamless social
+          integration.</p>
+        <div class="cs-gtm-tags">
+          <span class="cs-gtm-tag">TikTok-first content</span>
+          <span class="cs-gtm-tag">Influencer seeding</span>
+          <span class="cs-gtm-tag">UGC flywheel</span>
+        </div>
+      </div>
+
+      <div class="cs-gtm-col">
+        <p class="cs-gtm-col-label">Pricing</p>
+        <p class="cs-gtm-col-title">$199–249 per unit.</p>
+        <p class="cs-gtm-col-body">Premium positioning that sits below phone accessories but above novelty. Bundled with
+          X Blue to tie device value directly to platform depth — the more you use X, the more useful Allude becomes.
+        </p>
+        <div class="cs-gtm-tags">
+          <span class="cs-gtm-tag">DTC — $199–249</span>
+          <span class="cs-gtm-tag">X Blue bundle</span>
+          <span class="cs-gtm-tag">LTE tier optional</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- GALLERY -->
+  <div class="cs-gallery" id="cs-gallery">
+    <div class="cs-gallery-sticky" id="gallery-sticky">
+      <div class="gallery-card" id="gcard-0">
+        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1770317511/allude_five_1_mf6oif.jpg"
+          alt="Allude image 1">
+      </div>
+      <div class="gallery-card" id="gcard-1">
+        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1749480847/allude-02_zmop6f.png"
+          alt="Allude image 2">
+      </div>
+      <div class="gallery-card" id="gcard-2">
+        <img
+          src="https://res.cloudinary.com/djmffrvpg/image/upload/v1781272831/Screenshot_2026-06-12_at_10.00.25_AM_p3rk5z.png"
+          alt="Allude image 3">
+      </div>
+      <div class="gallery-card" id="gcard-3">
+        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1770317856/allude_six_1_idhh3m.jpg"
+          alt="Allude image 4">
+      </div>
+      <div class="gallery-card" id="gcard-4">
+        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1749482152/3_vmna5g.png" alt="Allude image 4">
+      </div>
+    </div>
+  </div>
+
+  <section class="cs-more">
+    <a href="main.html" class="btn-back">View All Work</a>
+  </section>
+
+  <script>
+    // ── Gallery scroll effect ──
+    const cards = document.querySelectorAll('.gallery-card');
+    window.addEventListener('scroll', () => {
+      cards.forEach((card) => {
+        const rect = card.getBoundingClientRect();
+        const stickyTop = parseInt(getComputedStyle(card).top);
+        const distancePastSticky = stickyTop - rect.top;
+        if (distancePastSticky > 0) {
+          card.style.transform = `scale(${Math.max(0.88, 1 - distancePastSticky * 0.0004)})`;
+          card.style.filter = `brightness(${Math.max(0.6, 1 - distancePastSticky * 0.0008)})`;
+        } else {
+          card.style.transform = 'scale(1)';
+          card.style.filter = 'brightness(1)';
+        }
+      });
+    }, { passive: true });
+
+    // ── Scale Allude iframe to fill container ──
+    // Device is 580x380 — scale it proportionally to whatever width is available
+    function scaleAllude() {
+      const screen = document.getElementById('allude-frame-screen');
+      const iframe = document.getElementById('allude-iframe');
+      if (!screen || !iframe) return;
+      const containerWidth = screen.getBoundingClientRect().width;
+      if (containerWidth === 0) return; // not rendered yet
+      const scale = containerWidth / 580;
+      const scaledHeight = Math.round(380 * scale);
+      iframe.style.transform = `scale(${scale})`;
+      screen.style.height = scaledHeight + 'px';
+    }
+
+    // Run after layout — use requestAnimationFrame to ensure DOM is painted
+    requestAnimationFrame(() => {
+      scaleAllude();
+      window.addEventListener('resize', scaleAllude);
+    });
+  </script>
+
+</body>
+
+</html>
