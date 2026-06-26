@@ -631,3 +631,116 @@ body.cs-page {
   transition: background 0.25s, transform 0.2s;
 }
 .btn-back:hover { background: #000; transform: translateY(-1px); }
+
+
+@media (max-width: 768px) {
+
+  html:not(:has(.cs-page)),
+  body:not(.cs-page) {
+    height: auto;
+    overflow: auto;
+  }
+
+  #landing {
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+  }
+
+  .panel-left {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 40px 24px 36px;
+  }
+
+  .bio-heading {
+    font-size: clamp(1.4rem, 6vw, 1.9rem);
+    margin-bottom: 32px;
+  }
+
+  .panel-right {
+    width: 100%;
+    height: auto;
+    overflow-y: visible;
+    padding: 24px 16px 64px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .card {
+    aspect-ratio: 3 / 2.8;
+    border-radius: 12px;
+  }
+
+  .card-title {
+    font-size: clamp(1.8rem, 6vw, 2.4rem);
+  }
+
+  .card-tag {
+    font-size: 0.5rem;
+  }
+
+  /* ── Case study: hero ── */
+  .cs-hero {
+    height: 52vh;
+    margin: 12px 12px 0;
+    border-radius: 14px;
+  }
+
+  .cs-hero-overlay {
+    padding: 28px 24px;
+  }
+
+  .cs-title {
+    font-size: clamp(1.6rem, 7vw, 2.4rem);
+  }
+
+  /* ── Case study: description ── */
+  .cs-desc {
+    padding: 40px 24px;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .cs-desc-text h2 {
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+  }
+
+  /* ── Case study: GTM grid ── */
+  .cs-gtm {
+    padding: 40px 24px;
+  }
+
+  .cs-gtm-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  /* ── Case study: gallery ── */
+  .cs-gallery {
+    padding: 32px 16px !important;
+  }
+
+  /* ── Case study: embed ── */
+  .cs-embed {
+    padding: 40px 20px;
+  }
+
+  .cs-embed-screen-frame {
+    border-radius: 10px;
+  }
+
+  /* ── Case study: more / footer ── */
+  .cs-more {
+    padding: 60px 24px;
+  }
+
+  .cs-more h3 {
+    font-size: clamp(1.4rem, 6vw, 2rem);
+  }
+}
