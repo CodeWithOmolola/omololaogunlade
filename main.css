@@ -111,7 +111,7 @@ body.cs-page {
   gap: 8px;
   font-size: 0.975rem;
   font-weight: 400;
-  color: var(--bg);
+  color: var(--ash);
   text-decoration: none;
   opacity: 0.7;
   transition: opacity 0.2s;
