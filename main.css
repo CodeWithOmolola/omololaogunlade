@@ -102,7 +102,7 @@ body.cs-page {
   display: flex;
   flex-direction: column;
   gap: 10px;
-   margin-bottom: 50px;
+   margin-bottom: 30px;
 }
 
 .bio-content {
@@ -111,7 +111,7 @@ body.cs-page {
   gap: 8px;
   font-size: 0.975rem;
   font-weight: 400;
-  color: var(--ash);
+  color: #000;
   text-decoration: none;
   opacity: 0.7;
   transition: opacity 0.2s;
