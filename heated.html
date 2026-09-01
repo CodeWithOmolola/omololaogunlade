@@ -1,240 +1,286 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heated — Omolola Ogunlade</title>
+    <link rel="stylesheet" href="main.css" />
+    <style>
+      .cs-gallery {
+        height: auto;
+        background: var(--ash);
+        padding: 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Heated — Omolola Ogunlade</title>
-  <link rel="stylesheet" href="main.css">
-  <style>
-    .cs-gallery {
-      height: auto;
-      background: var(--ash);
-      padding: 60px;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
+      .cs-gallery-sticky {
+        position: relative;
+        height: auto;
+        overflow: visible;
+        background: transparent;
+        display: block;
+      }
 
-    .cs-gallery-sticky {
-      position: relative;
-      height: auto;
-      overflow: visible;
-      background: transparent;
-      display: block;
-    }
+      .gallery-card {
+        position: sticky;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
+        margin-bottom: 24px;
+        transform-origin: top center;
+      }
 
-    .gallery-card {
-      position: sticky;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
-      margin-bottom: 24px;
-      transform-origin: top center;
-    }
+      .gallery-card:last-child {
+        margin-bottom: 0;
+      }
 
-    .gallery-card:last-child {
-      margin-bottom: 0;
-    }
+      .gallery-card:nth-child(1) {
+        top: 40px;
+        z-index: 1;
+      }
 
-    .gallery-card:nth-child(1) {
-      top: 40px;
-      z-index: 1;
-    }
+      .gallery-card:nth-child(2) {
+        top: 60px;
+        z-index: 2;
+      }
 
-    .gallery-card:nth-child(2) {
-      top: 60px;
-      z-index: 2;
-    }
+      .gallery-card:nth-child(3) {
+        top: 80px;
+        z-index: 3;
+      }
 
-    .gallery-card:nth-child(3) {
-      top: 80px;
-      z-index: 3;
-    }
+      .gallery-card:nth-child(4) {
+        top: 100px;
+        z-index: 4;
+      }
 
-    .gallery-card:nth-child(4) {
-      top: 100px;
-      z-index: 4;
-    }
+      .gallery-card:nth-child(5) {
+        top: 120px;
+        z-index: 5;
+      }
 
-    .gallery-card:nth-child(5) {
-      top: 120px;
-      z-index: 5;
-    }
+      .gallery-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    </style>
+  </head>
 
-    .gallery-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-  </style>
-</head>
+  <body class="cs-page">
+    <nav class="cs-nav">
+      <a href="strategy.html" class="cs-nav-inner">
+        <span>←</span><span>All Work</span>
+      </a>
+    </nav>
 
-<body class="cs-page">
-
-  <nav class="cs-nav">
-    <a href="main.html" class="cs-nav-inner">
-      <span>←</span><span>All Work</span>
-    </a>
-  </nav>
-
-  <div class="cs-hero">
-    <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1749485054/heated-06_lutqeu.png" class="cs-hero-img"
-      alt="Heated cover">
-    <div class="cs-hero-overlay">
-      <div class="cs-tag">Product Design · UX Design · Consumer Technology · GTM</div>
-      <h1 class="cs-title">Heated</h1>
-    </div>
-  </div>
-
-  <section class="cs-desc">
-    <div class="cs-desc-meta">
-      <div class="cs-meta-item">
-        <label>Heated</label>
-        <p>Biophilic Candle Warmer, Lamp & Incense Holder</p>
-      </div>
-      <div class="cs-meta-item">
-        <label>Category</label>
-        <p>Consumer Home Goods</p>
-      </div>
-      <div class="cs-meta-item">
-        <label>Deliverables</label>
-        <p>Product Design · Product Development · Strategy · Market Positioning</p>
-      </div>
-      <div class="cs-meta-item">
-        <label>Tools</label>
-        <p>AutoCAD · Figma · Market Research</p>
+    <div class="cs-hero">
+      <img
+        src="https://res.cloudinary.com/djmffrvpg/image/upload/v1749485054/heated-06_lutqeu.png"
+        class="cs-hero-img"
+        alt="Heated cover"
+      />
+      <div class="cs-hero-overlay">
+        <div class="cs-tag">Research-Backed Product Design · Engineering</div>
+        <h1 class="cs-title">Heated</h1>
       </div>
     </div>
-    <div class="cs-desc-text">
-      <p>
-        Heated is what happens when IKEA and Adobe share a premise: your environment doesn't just affect how you feel —
-        it shapes how you think. Most home goods address one sensory lever at a time. Heated combines a candle warmer,
-        ambient lamp, and incense holder in a single biophilic form. A mushroom-inspired, warm-toned, designed to
-        engineer the conditions that make focused and creative work feel natural.
-        <br><br>
-        The product spans hardware design, a companion app with mood presets, and a go-to-market strategy rooted in
-        environmental psychology research. The core question: what does "accessible luxury" actually look like when
-        democratic design meets creative infrastructure?
-      </p>
-    </div>
-  </section>
 
-  <!-- VERTICAL EMBED — Heated mobile UI -->
-  <section class="cs-embed cs-embed-vertical">
-    <div class="cs-embed-label"><span>Live Prototype</span></div>
-    <div
-      style="background:#111; border-radius:44px; display:inline-block; line-height:0; box-shadow:0 32px 72px rgba(0,0,0,0.4);">
-      <iframe src="heated-ux.html" title="Heated prototype" allow="fullscreen" loading="lazy"
-        style="width:340px; height:706px; border:none; display:block; border-radius:44px;">
-      </iframe>
-    </div>
-  </section>
-
-  <!-- GTM STRATEGY -->
-  <section class="cs-gtm">
-    <p class="cs-gtm-eyebrow">Go-to-Market Strategy</p>
-    <div class="cs-gtm-grid">
-
-      <div class="cs-gtm-col">
-        <p class="cs-gtm-col-label">Launch</p>
-        <p class="cs-gtm-col-title">A Room at Milan Design Week.</p>
-        <p class="cs-gtm-col-body">Joint IKEA × Adobe installation, a fully staged environment where visitors
-          experience the warmth, scent, light, and form together before they ever read a spec sheet.</p>
-        <div class="cs-gtm-tags">
-          <span class="cs-gtm-tag">Milan Design Week</span>
-          <span class="cs-gtm-tag">IKEA e-commerce</span>
-          <span class="cs-gtm-tag">Select flagships</span>
+    <section class="cs-desc">
+      <div class="cs-desc-meta">
+        <div class="cs-meta-item">
+          <label>Heated</label>
+          <p>Biophilic Candle Warmer, Lamp & Incense Holder</p>
+        </div>
+        <div class="cs-meta-item">
+          <label>Partnership</label>
+          <p>IKEA & Adobe</p>
+        </div>
+        <div class="cs-meta-item">
+          <label>Category</label>
+          <p>Consumer Home Goods</p>
+        </div>
+        <div class="cs-meta-item">
+          <label>Deliverables</label>
+          <p>Research-Backed Product Design · Engineering</p>
+        </div>
+        <div class="cs-meta-item">
+          <label>Tools</label>
+          <p>
+            AutoCAD · Figma · Market Research · Adobe Illustrator & InDesign
+          </p>
         </div>
       </div>
-
-      <div class="cs-gtm-col">
-        <p class="cs-gtm-col-label">Market Approach</p>
-        <p class="cs-gtm-col-title">Lead with the science.</p>
-        <p class="cs-gtm-col-body">Campaign creative draws on environmental psychology research — translated into
-          language that's felt, not academic. Partner with designers, writers, and artists who already treat their
-          physical environment as part of their process.</p>
-        <div class="cs-gtm-tags">
-          <span class="cs-gtm-tag">Short-form studio content</span>
-          <span class="cs-gtm-tag">Creator partnerships</span>
-          <span class="cs-gtm-tag">CC bundle conversion</span>
-        </div>
-      </div>
-
-      <div class="cs-gtm-col">
-        <p class="cs-gtm-col-label">Pricing</p>
-        <p class="cs-gtm-col-title">$149–179 per unit.</p>
-        <p class="cs-gtm-col-body">Consistent with IKEA's accessible design ethos without undercutting the product's
-          intentionality. Bundled with Adobe Creative Cloud as a physical companion to a digital creative subscription.
+      <div class="cs-desc-text">
+        <p>
+          Most home objects address one sensory lever at a time, warmth, scent,
+          or form; even though research shows all three shape cognitive state:
+          ambient warmth shifts people toward intuitive thinking, pleasant
+          fragrance improves mood and creative performance, and nature-adjacent
+          forms reduce mental fatigue. Heated addresses all three at once. It's
+          a candle warmer, lamp, and incense holder built around a simple
+          premise: your environment either works for you or against you, and
+          most home goods aren't designed with that in mind.
         </p>
-        <div class="cs-gtm-tags">
-          <span class="cs-gtm-tag">DTC — $149–179</span>
-          <span class="cs-gtm-tag">Adobe CC bundle</span>
-          <span class="cs-gtm-tag">Consumables repeat purchase</span>
+      </div>
+    </section>
+
+    <!-- VERTICAL EMBED — Heated mobile UI -->
+    <section class="cs-embed cs-embed-vertical">
+      <div class="cs-embed-label"><span>Live Prototype</span></div>
+      <div
+        style="
+          background: #111;
+          border-radius: 44px;
+          display: inline-block;
+          line-height: 0;
+          box-shadow: 0 32px 72px rgba(0, 0, 0, 0.4);
+        "
+      >
+        <iframe
+          src="heated-ux.html"
+          title="Heated prototype"
+          allow="fullscreen"
+          loading="lazy"
+          style="
+            width: 340px;
+            height: 706px;
+            border: none;
+            display: block;
+            border-radius: 44px;
+          "
+        >
+        </iframe>
+      </div>
+    </section>
+
+    <!-- GTM STRATEGY -->
+    <section class="cs-gtm">
+      <p class="cs-gtm-eyebrow">Product Decisions</p>
+      <div class="cs-gtm-grid">
+        <div class="cs-gtm-col">
+          <p class="cs-gtm-col-label">Form</p>
+          <p class="cs-gtm-col-title">Why a Mushroom Shape</p>
+          <p class="cs-gtm-col-body">
+            Inspired by mycelial networks, the design treats warming, fragrance,
+            and mood as one connected system rather than separate features: the
+            warming system distributes fragrance, the fragrance shifts mood, the
+            mood shifts cognitive state. Research on nature-adjacent forms shows
+            this kind of biophilic cue can lower psychological guard and restore
+            attention depleted by screens and overstimulation; which is the
+            actual function the shape is doing, not just its look.
+          </p>
+          <div class="cs-gtm-tags">
+            <span class="cs-gtm-tag">Design Rationale</span>
+            <span class="cs-gtm-tag">Biophilic Design</span>
+          </div>
+        </div>
+
+        <div class="cs-gtm-col">
+          <p class="cs-gtm-col-label">Architecture</p>
+          <p class="cs-gtm-col-title">Engineered for Safety and Airflow</p>
+          <p class="cs-gtm-col-body">
+            Dual-function as both candle warmer and incense holder, with
+            dedicated placement zones for each. A ventilation system creates a
+            natural chimney effect for even scent distribution.
+            Precision-engineered ring positioning maximizes heat transfer while
+            keeping the candle out of direct glass contact. Touch-sensitive
+            temperature and LED controls sit on top, so the technical layer
+            stays invisible during use.
+          </p>
+          <div class="cs-gtm-tags">
+            <span class="cs-gtm-tag">Product Architecture</span>
+            <span class="cs-gtm-tag">Engineering</span>
+          </div>
+        </div>
+
+        <div class="cs-gtm-col">
+          <p class="cs-gtm-col-label">Partnership</p>
+          <p class="cs-gtm-col-title">Why IKEA & Adobe</p>
+          <p class="cs-gtm-col-body">
+            IKEA's design language is built around everyday life as it's lived. Adobe's is built around
+            the conditions that make creative work possible. Heated sits at the
+            intersection: an accessible object doing the job of a luxury one,
+            aimed at making a home's environment work with someone's creative
+            process instead of against it.
+          </p>
+          <div class="cs-gtm-tags">
+            <span class="cs-gtm-tag">Partnership Logic</span>
+            <span class="cs-gtm-tag">Strategy</span>
+          </div>
         </div>
       </div>
+    </section>
 
+    <!-- GALLERY -->
+    <div class="cs-gallery" id="cs-gallery">
+      <div class="cs-gallery-sticky" id="gallery-sticky">
+        <div class="gallery-card" id="gcard-0">
+          <img
+            src="https://res.cloudinary.com/dio49rnxg/image/upload/v1746986385/Heated-Three_bxlwe7.png"
+            alt="Heated image 1"
+          />
+        </div>
+        <div class="gallery-card" id="gcard-1">
+          <img
+            src="https://res.cloudinary.com/djmffrvpg/image/upload/v1749485039/heated-01_ts7slv.png"
+            alt="Heated image 2"
+          />
+        </div>
+        <div class="gallery-card" id="gcard-2">
+          <img
+            src="https://res.cloudinary.com/djmffrvpg/image/upload/v1781267287/Screenshot_2026-06-12_at_8.27.53_AM_imfnvm.png"
+            alt="Heated image 3"
+          />
+        </div>
+        <div class="gallery-card" id="gcard-3">
+          <img
+            src="https://res.cloudinary.com/djmffrvpg/image/upload/v1749485054/heated-06_lutqeu.png"
+            alt="Heated image 4"
+          />
+        </div>
+        <div class="gallery-card" id="gcard-4">
+          <img
+            src="https://res.cloudinary.com/djmffrvpg/image/upload/v1749485051/heated-05_begvf2.png"
+            alt="Heated image 5"
+          />
+        </div>
+      </div>
     </div>
-  </section>
 
-  <!-- GALLERY -->
-  <div class="cs-gallery" id="cs-gallery">
-    <div class="cs-gallery-sticky" id="gallery-sticky">
+    <section class="cs-more">
+      <a href="strategy.html" class="btn-back">View All Work</a>
+    </section>
 
-      <div class="gallery-card" id="gcard-0">
-        <img src="https://res.cloudinary.com/dio49rnxg/image/upload/v1746986385/Heated-Three_bxlwe7.png"
-          alt="Heated image 1">
-      </div>
-      <div class="gallery-card" id="gcard-1">
-        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1749485039/heated-01_ts7slv.png"
-          alt="Heated image 2">
-      </div>
-      <div class="gallery-card" id="gcard-2">
-        <img
-          src="https://res.cloudinary.com/djmffrvpg/image/upload/v1781267287/Screenshot_2026-06-12_at_8.27.53_AM_imfnvm.png"
-          alt="Heated image 3">
-      </div>
-      <div class="gallery-card" id="gcard-3">
-        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1749485054/heated-06_lutqeu.png"
-          alt="Heated image 4">
-      </div>
-      <div class="gallery-card" id="gcard-4">
-        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1749485051/heated-05_begvf2.png"
-          alt="Heated image 5">
-      </div>
+    <script>
+      const cards = document.querySelectorAll(".gallery-card");
 
-    </div>
-  </div>
+      window.addEventListener(
+        "scroll",
+        () => {
+          cards.forEach((card) => {
+            const rect = card.getBoundingClientRect();
+            const stickyTop = parseInt(getComputedStyle(card).top);
+            const distancePastSticky = stickyTop - rect.top;
 
-  <section class="cs-more">
-    <a href="main.html" class="btn-back">View All Work</a>
-  </section>
-
-  <script>
-    const cards = document.querySelectorAll('.gallery-card');
-
-    window.addEventListener('scroll', () => {
-      cards.forEach((card) => {
-        const rect = card.getBoundingClientRect();
-        const stickyTop = parseInt(getComputedStyle(card).top);
-        const distancePastSticky = stickyTop - rect.top;
-
-        if (distancePastSticky > 0) {
-          const scale = Math.max(0.88, 1 - distancePastSticky * 0.0004);
-          const brightness = Math.max(0.6, 1 - distancePastSticky * 0.0008);
-          card.style.transform = `scale(${scale})`;
-          card.style.filter = `brightness(${brightness})`;
-        } else {
-          card.style.transform = 'scale(1)';
-          card.style.filter = 'brightness(1)';
-        }
-      });
-    }, { passive: true });
-  </script>
-
-</body>
-
+            if (distancePastSticky > 0) {
+              const scale = Math.max(0.88, 1 - distancePastSticky * 0.0004);
+              const brightness = Math.max(0.6, 1 - distancePastSticky * 0.0008);
+              card.style.transform = `scale(${scale})`;
+              card.style.filter = `brightness(${brightness})`;
+            } else {
+              card.style.transform = "scale(1)";
+              card.style.filter = "brightness(1)";
+            }
+          });
+        },
+        { passive: true },
+      );
+    </script>
+  </body>
 </html>

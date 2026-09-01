@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Landing Page Request Board</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root{
+  --stone:#F6F7FB;
+  --paper:#FFFFFF;
+  --ink:#323338;
+  --muted:#676879;
+  --faint:#9699A6;
+  --line:#E6E9EF;
+  --plum:#6161FF;
+  --plum-tint:#ECECFF;
+  --teal:#00854D;
+  --teal-tint:#DDF6E8;
+  --amber:#E39323;
+  --amber-tint:#FFF1DE;
+  --slate:#676879;
+  --slate-tint:#F0F1F5;
+  --red:#E2445C;
+  --red-tint:#FCE3E7;
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--stone);
+  font-family:'IBM Plex Sans', sans-serif;
+  color:var(--ink);
+  padding:56px 40px 80px;
+}
+
+.page-head{max-width:1320px;margin:0 auto 40px;}
+.page-head .eyebrow{font-size:13px;color:var(--plum);font-weight:500;margin-bottom:10px;}
+.page-head h1{font-family:'Fraunces', serif;font-weight:500;font-size:40px;margin:0 0 10px;letter-spacing:-0.01em;}
+.page-head p{font-size:15px;color:var(--muted);max-width:600px;line-height:1.55;margin:0;}
+
+.wrap{max-width:1320px;margin:0 auto;}
+
+.screen{background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 1px 2px rgba(34,31,29,0.04);}
+.chrome{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);}
+.chrome .dots{display:flex;gap:6px;}
+.chrome .dots span{width:8px;height:8px;border-radius:50%;background:var(--line);}
+.chrome .title{font-size:12.5px;color:var(--muted);font-weight:500;margin-left:6px;}
+
+/* ---- intake form ---- */
+.intake{padding:20px 20px 22px;border-bottom:1px solid var(--line);}
+.intake .form-label{font-size:11.5px;color:var(--muted);margin-bottom:12px;font-weight:500;}
+.form-row{display:grid;grid-template-columns:1.1fr 1.3fr 1.3fr 1.1fr auto;gap:12px;align-items:end;}
+.field label{display:block;font-size:11px;color:var(--faint);margin-bottom:5px;}
+.field input{
+  width:100%;padding:8px 10px;font-size:13px;font-family:'IBM Plex Sans',sans-serif;
+  border:1px solid var(--line);border-radius:5px;background:var(--paper);color:var(--ink);
+}
+.field input:focus{outline:none;border-color:var(--plum);}
+.btn{
+  font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;font-weight:500;
+  padding:9px 16px;border-radius:5px;border:1px solid transparent;cursor:pointer;white-space:nowrap;
+}
+.btn-primary{background:var(--plum);color:#fff;}
+.btn-primary:hover{background:#4C4CE0;}
+.btn-secondary{background:transparent;border:1px solid var(--line);color:var(--ink);}
+.btn-secondary:hover{border-color:var(--faint);}
+.btn-small{padding:6px 11px;font-size:11.5px;}
+
+/* ---- board table ---- */
+.board-header,.board-row{
+  display:grid;
+  grid-template-columns:1.4fr 1.2fr 1.3fr 1.6fr 1fr 1.2fr;
+  gap:14px;
+  align-items:center;
+  padding:13px 20px;
+}
+.board-header{font-size:11px;color:var(--faint);border-bottom:1px solid var(--line);}
+.board-row{border-bottom:1px solid var(--line);}
+.board-row:last-child{border-bottom:none;}
+.req-name{font-size:13px;font-weight:500;}
+.req-email{font-size:11px;color:var(--muted);margin-top:2px;}
+.lp-name{font-size:13px;font-weight:500;}
+.edit-pill{
+  display:inline-block;margin-top:4px;font-size:10px;font-weight:600;
+  padding:3px 9px;border-radius:20px;color:#fff;background:var(--amber);
+}
+.sku-tag{
+  display:inline-block;font-size:10.5px;font-family:'IBM Plex Mono',monospace;
+  color:#fff;background:#579BFC;padding:3px 7px;border-radius:4px;
+  margin:0 4px 4px 0;font-weight:500;
+}
+.url-input{
+  width:100%;padding:7px 9px;font-size:12px;font-family:'IBM Plex Mono',monospace;
+  border:1px solid var(--line);border-radius:5px;background:var(--paper);color:var(--ink);
+}
+.url-input::placeholder{color:var(--faint);font-family:'IBM Plex Sans',sans-serif;}
+.url-input:focus{outline:none;border-color:var(--plum);}
+.actions{display:flex;flex-direction:column;gap:6px;}
+.empty-board{padding:30px 20px;color:var(--faint);font-size:13px;text-align:center;}
+
+/* ---- bottom split / inboxes ---- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;}
+.inbox-row{display:flex;gap:12px;align-items:flex-start;padding:14px 18px;border-bottom:1px solid var(--line);}
+.inbox-row:last-child{border-bottom:none;}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--plum);margin-top:6px;flex-shrink:0;}
+.dot.read{background:var(--line);}
+.avatar{
+  width:26px;height:26px;border-radius:50%;background:var(--slate-tint);color:var(--slate);
+  font-size:10.5px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.avatar.sys{background:var(--plum-tint);color:var(--plum);}
+.mail-main{flex:1;min-width:0;}
+.mail-top{display:flex;justify-content:space-between;gap:10px;}
+.mail-subject{font-size:13px;font-weight:600;}
+.mail-time{font-size:10.5px;color:var(--faint);white-space:nowrap;font-family:'IBM Plex Mono',monospace;}
+.mail-from{font-size:11.5px;color:var(--muted);margin-top:2px;}
+.mail-snippet{font-size:11.5px;color:var(--faint);margin-top:4px;line-height:1.4;}
+.inbox-empty{padding:26px 18px;color:var(--faint);font-size:12.5px;text-align:center;}
+
+/* ---- edit modal ---- */
+.modal-backdrop{
+  display:none;position:fixed;inset:0;background:rgba(34,31,29,0.45);
+  align-items:center;justify-content:center;z-index:50;
+}
+.modal-backdrop.open{display:flex;}
+.modal{
+  background:var(--paper);border-radius:10px;border:1px solid var(--line);
+  width:420px;max-width:92vw;box-shadow:0 12px 32px rgba(34,31,29,0.18);
+}
+.modal-head{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 20px;border-bottom:1px solid var(--line);
+}
+.modal-head h3{font-family:'Fraunces',serif;font-weight:500;font-size:18px;margin:0;}
+.modal-close{background:none;border:none;font-size:18px;color:var(--faint);cursor:pointer;line-height:1;}
+.modal-body{padding:18px 20px;display:flex;flex-direction:column;gap:14px;}
+.modal-body .field label{font-size:11.5px;color:var(--muted);}
+.modal-foot{padding:14px 20px 18px;display:flex;justify-content:flex-end;gap:10px;border-top:1px solid var(--line);}
+
+@media(max-width:960px){
+  .form-row,.board-header,.board-row{grid-template-columns:1fr;}
+  .split{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="page-head">
+  <div class="eyebrow">Portfolio recreation — internal tool, Ulta Beauty</div>
+  <p>A cross-functional workflow system connecting social, marketing, and merchandising teams, from intake through URL generation to requestor notification.</p>
+</div>
+
+<div class="wrap">
+
+  <!-- TOP: intake form + board -->
+  <div class="screen">
+    <div class="chrome">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="title">Landing Page Request Board</div>
+    </div>
+
+    <div class="intake">
+      <div class="form-label">New request</div>
+      <form class="form-row" id="intake-form">
+        <div class="field">
+          <label>Requestor name</label>
+          <input type="text" id="in-name" required placeholder="K. Alvarez">
+        </div>
+        <div class="field">
+          <label>Requestor email</label>
+          <input type="email" id="in-email" required placeholder="k.alvarez@ulta.com">
+        </div>
+        <div class="field">
+          <label>Landing page name</label>
+          <input type="text" id="in-lpname" required placeholder="Prestige Fragrance Refresh">
+        </div>
+        <div class="field">
+          <label>SKUs</label>
+          <input type="text" id="in-skus" required placeholder="482910, 482911">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+    <div class="board-header">
+      <span>Requestor</span><span>Landing page</span><span>SKUs</span><span>Generated URL</span><span></span><span>Actions</span>
+    </div>
+    <div id="board-body"></div>
+  </div>
+
+  <!-- BOTTOM: split inboxes -->
+  <div class="split">
+    <div class="screen">
+      <div class="chrome">
+        <div class="dots"><span></span><span></span><span></span></div>
+        <div class="title">Requestor Inbox</div>
+      </div>
+      <div id="requestor-inbox"></div>
+    </div>
+
+    <div class="screen">
+      <div class="chrome">
+        <div class="dots"><span></span><span></span><span></span></div>
+        <div class="title">Submission Inbox</div>
+      </div>
+      <div id="submission-inbox"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- EDIT MODAL -->
+<div class="modal-backdrop" id="modal-backdrop">
+  <div class="modal">
+    <div class="modal-head">
+      <h3>Edit request</h3>
+      <button class="modal-close" id="modal-close">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="field"><label>Requestor name</label><input type="text" id="edit-name"></div>
+      <div class="field"><label>Requestor email</label><input type="email" id="edit-email"></div>
+      <div class="field"><label>Landing page name</label><input type="text" id="edit-lpname"></div>
+      <div class="field"><label>SKUs</label><input type="text" id="edit-skus"></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-secondary" id="modal-cancel">Cancel</button>
+      <button class="btn btn-primary" id="modal-submit">Submit edits</button>
+    </div>
+  </div>
+</div>
+
+<script>
+let requests = [];
+let requestorInbox = [];
+let submissionInbox = [];
+let nextId = 1;
+let editingId = null;
+
+function timeNow(){ return "Just now"; }
+
+function seed(){
+  const r = {
+    id: nextId++,
+    name: "K. Alvarez", email: "k.alvarez@ulta.com",
+    lpName: "Prestige Fragrance Refresh", skus: "482910, 482911",
+    url: "ulta.com/lp/prestige-fragrance-refresh",
+    editPending: false
+  };
+  requests.push(r);
+  submissionInbox.push({subject:`New landing page request — ${r.lpName}`, from:r.name, time:"2h ago", snippet:`SKUs: ${r.skus}`, read:true});
+  requestorInbox.push({subject:`Your LP for ${r.lpName} has been updated.`, from:"Relay Team", time:"1h ago", snippet:`Your landing page is live: ${r.url}`, read:true});
+}
+seed();
+
+function render(){
+  renderBoard();
+  renderInbox("requestor-inbox", requestorInbox);
+  renderInbox("submission-inbox", submissionInbox);
+}
+
+function renderBoard(){
+  const body = document.getElementById("board-body");
+  if(requests.length === 0){
+    body.innerHTML = `<div class="empty-board">No requests yet — submit the form above.</div>`;
+    return;
+  }
+  body.innerHTML = requests.map(r => `
+    <div class="board-row">
+      <div>
+        <div class="req-name">${r.name}</div>
+        <div class="req-email">${r.email}</div>
+      </div>
+      <div>
+        <div class="lp-name">${r.lpName}</div>
+        ${r.editPending ? `<span class="edit-pill">Edit requested</span>` : ``}
+      </div>
+      <div>${r.skus.split(",").map(s => `<span class="sku-tag">${s.trim()}</span>`).join("")}</div>
+      <div><input class="url-input" placeholder="Paste generated URL…" value="${r.url}" onchange="setUrl(${r.id}, this.value)"></div>
+      <div></div>
+      <div class="actions">
+        <button class="btn btn-secondary btn-small" onclick="openEdit(${r.id})">Update Request</button>
+        <button class="btn btn-primary btn-small" onclick="notifyRequestor(${r.id})">Notify requestor</button>
+      </div>
+    </div>
+  `).join("");
+}
+
+function renderInbox(elId, list){
+  const el = document.getElementById(elId);
+  if(list.length === 0){
+    el.innerHTML = `<div class="inbox-empty">No messages yet.</div>`;
+    return;
+  }
+  const items = [...list].reverse();
+  el.innerHTML = items.map(m => `
+    <div class="inbox-row">
+      <div class="dot ${m.read ? "read" : ""}"></div>
+      <div class="avatar sys">${m.from.split(" ").map(w=>w[0]).slice(0,2).join("")}</div>
+      <div class="mail-main">
+        <div class="mail-top">
+          <div class="mail-subject">${m.subject}</div>
+          <div class="mail-time">${m.time}</div>
+        </div>
+        <div class="mail-from">${m.from}</div>
+        <div class="mail-snippet">${m.snippet}</div>
+      </div>
+    </div>
+  `).join("");
+}
+
+document.getElementById("intake-form").addEventListener("submit", function(e){
+  e.preventDefault();
+  const name = document.getElementById("in-name").value.trim();
+  const email = document.getElementById("in-email").value.trim();
+  const lpName = document.getElementById("in-lpname").value.trim();
+  const skus = document.getElementById("in-skus").value.trim();
+  if(!name || !email || !lpName || !skus) return;
+
+  const r = { id: nextId++, name, email, lpName, skus, url:"", editPending:false };
+  requests.push(r);
+  submissionInbox.push({subject:`New landing page request — ${lpName}`, from:name, time:timeNow(), snippet:`SKUs: ${skus}`, read:false});
+
+  this.reset();
+  render();
+});
+
+function setUrl(id, value){
+  const r = requests.find(x => x.id === id);
+  if(r) r.url = value;
+}
+
+function openEdit(id){
+  const r = requests.find(x => x.id === id);
+  if(!r) return;
+  editingId = id;
+  document.getElementById("edit-name").value = r.name;
+  document.getElementById("edit-email").value = r.email;
+  document.getElementById("edit-lpname").value = r.lpName;
+  document.getElementById("edit-skus").value = r.skus;
+  document.getElementById("modal-backdrop").classList.add("open");
+}
+
+function closeModal(){
+  document.getElementById("modal-backdrop").classList.remove("open");
+  editingId = null;
+}
+document.getElementById("modal-close").addEventListener("click", closeModal);
+document.getElementById("modal-cancel").addEventListener("click", closeModal);
+document.getElementById("modal-backdrop").addEventListener("click", function(e){
+  if(e.target === this) closeModal();
+});
+
+document.getElementById("modal-submit").addEventListener("click", function(){
+  const r = requests.find(x => x.id === editingId);
+  if(!r) return;
+  r.name = document.getElementById("edit-name").value.trim();
+  r.email = document.getElementById("edit-email").value.trim();
+  r.lpName = document.getElementById("edit-lpname").value.trim();
+  r.skus = document.getElementById("edit-skus").value.trim();
+  r.editPending = true;
+  submissionInbox.push({subject:`Edit requested — ${r.lpName}`, from:r.name, time:timeNow(), snippet:`Updated SKUs: ${r.skus}`, read:false});
+  closeModal();
+  render();
+});
+
+function notifyRequestor(id){
+  const r = requests.find(x => x.id === id);
+  if(!r) return;
+  if(!r.url){ alert("Add the landing page URL before notifying the requestor."); return; }
+  const snippet = r.editPending
+    ? `Your requested edits have been applied: ${r.url}`
+    : `Your landing page is live: ${r.url}`;
+  requestorInbox.push({subject:`Your LP for ${r.lpName} has been updated.`, from:"Relay Team", time:timeNow(), snippet, read:false});
+  r.editPending = false;
+  render();
+}
+
+render();
+</script>
+</body>
+</html>

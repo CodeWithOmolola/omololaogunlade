@@ -1,188 +1,191 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ether — Omolola Ogunlade</title>
+    <link rel="stylesheet" href="main.css" />
+    <style>
+      /* ── Gallery overrides for this page ── */
+      .cs-gallery {
+        height: auto;
+        background: var(--ash);
+        padding: 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ether — Omolola Ogunlade</title>
-  <link rel="stylesheet" href="main.css">
-  <style>
-    /* ── Gallery overrides for this page ── */
-    .cs-gallery {
-      height: auto;
-      background: var(--ash);
-      padding: 60px;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
+      .cs-gallery-sticky {
+        position: relative;
+        height: auto;
+        overflow: visible;
+        background: transparent;
+        display: block;
+      }
 
-    .cs-gallery-sticky {
-      position: relative;
-      height: auto;
-      overflow: visible;
-      background: transparent;
-      display: block;
-    }
+      .gallery-card {
+        position: sticky;
+        top: 40px;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
+        margin-bottom: 24px;
+        transform-origin: top center;
+      }
 
-    .gallery-card {
-      position: sticky;
-      top: 40px;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
-      margin-bottom: 24px;
-      transform-origin: top center;
-    }
+      .gallery-card:last-child {
+        margin-bottom: 0;
+      }
 
-    .gallery-card:last-child {
-      margin-bottom: 0;
-    }
+      /* Each card stacks higher than the last */
+      .gallery-card:nth-child(1) {
+        top: 40px;
+        z-index: 1;
+      }
 
-    /* Each card stacks higher than the last */
-    .gallery-card:nth-child(1) {
-      top: 40px;
-      z-index: 1;
-    }
+      .gallery-card:nth-child(2) {
+        top: 60px;
+        z-index: 2;
+      }
 
-    .gallery-card:nth-child(2) {
-      top: 60px;
-      z-index: 2;
-    }
+      .gallery-card:nth-child(3) {
+        top: 80px;
+        z-index: 3;
+      }
 
-    .gallery-card:nth-child(3) {
-      top: 80px;
-      z-index: 3;
-    }
+      .gallery-card:nth-child(4) {
+        top: 100px;
+        z-index: 4;
+      }
 
-    .gallery-card:nth-child(4) {
-      top: 100px;
-      z-index: 4;
-    }
+      .gallery-card:nth-child(5) {
+        top: 120px;
+        z-index: 5;
+      }
 
-    .gallery-card:nth-child(5) {
-      top: 120px;
-      z-index: 5;
-    }
+      .gallery-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    </style>
+  </head>
 
-    .gallery-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-  </style>
-</head>
+  <body class="cs-page">
+    <nav class="cs-nav">
+      <a href="strategy.html" class="cs-nav-inner">
+        <span>←</span><span>All Work</span>
+      </a>
+    </nav>
 
-<body class="cs-page">
-
-  <nav class="cs-nav">
-    <a href="main.html" class="cs-nav-inner">
-      <span>←</span><span>All Work</span>
-    </a>
-  </nav>
-
-  <!-- HERO -->
-  <div class="cs-hero">
-    <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1781972444/blu-ether-f-pdp_bzhjlt.png"
-      class="cs-hero-img" alt="ether cover">
-    <div class="cs-hero-overlay">
-      <div class="cs-tag">Startup</div>
-      <h1 class="cs-title">ether</h1>
+    <!-- HERO -->
+    <div class="cs-hero">
+      <img
+        src="https://res.cloudinary.com/djmffrvpg/image/upload/v1781972444/blu-ether-f-pdp_bzhjlt.png"
+        class="cs-hero-img"
+        alt="ether cover"
+      />
+      <div class="cs-hero-overlay">
+        <div class="cs-tag">Startup</div>
+        <h1 class="cs-title">ether</h1>
+      </div>
     </div>
 
-  </div>
-
-  <!-- DESCRIPTION -->
-  <section class="cs-desc">
-    <div class="cs-desc-meta">
-      <div class="cs-meta-item">
-        <label>ether</label>
-        <p>Startup</p>
+    <!-- DESCRIPTION -->
+    <section class="cs-desc">
+      <div class="cs-desc-meta">
+        <div class="cs-meta-item">
+          <label>ether</label>
+          <p>Startup</p>
+        </div>
+        <div class="cs-meta-item">
+          <label>Role</label>
+          <p>Founder</p>
+        </div>
+        <div class="cs-meta-item">
+          <label>Deliverables</label>
+          <p>Product Strategy · Systems Design</p>
+        </div>
+        <div class="cs-meta-item">
+          <label>Notes</label>
+          <p><strong>@madebyether</strong></p>
+          <p>
+            <a href="https://www.instagram.com/madebyether">Instagram</a>
+            <br />
+            <a href="https://www.tiktok.com/@madebyether?_r=1&_t=ZT-97NFRW9KRxe"
+              >TikTok</a
+            >
+            <br />
+            <a href="https://www.pinterest.com/madebyether/_created"
+              >Pinterest</a
+            >
+          </p>
+        </div>
       </div>
-      <div class="cs-meta-item">
-        <label>Role</label>
-        <p>Founder</p>
-      </div>
-      <div class="cs-meta-item">
-        <label>Deliverables</label>
-        <p>Product Development · GTM </p>
-      </div>
-      <div class="cs-meta-item">
-        <label>Notes</label>
-        <p> <strong>@madebyether</strong> </p>
+      <div class="cs-desc-text">
         <p>
-          <a href="https://www.instagram.com/madebyether">Instagram</a>
+          ether is a community platform. It started from a simple observation:
+          most platforms sort content by category or by who posted it,
+          optimizing for engagement over substance. ether sorts by intent
+          instead centering what someone's actually trying to do by sharing, and
+          is built around slowing down rather than maximizing time on the app.
           <br>
-          <a href="https://www.tiktok.com/@madebyether?_r=1&_t=ZT-97NFRW9KRxe">TikTok</a>
-          <br>
-          <a href="https://www.pinterest.com/madebyether/_created">Pinterest</a>
+          The current version(s) is testing user interaction and core capabilities, with the full app targeted for Spring 2027.
+          <br /><br />
+          <a href="https://madebyether.com/index.html">ether</a>
         </p>
       </div>
-    </div>
-    <div class="cs-desc-text">
-      <p>
-        ether is a company built around a simple belief — that culture deserves to be documented with intention. We felt
-        too much was getting overlooked. ether started as a response to that — a place to slow down, look closer, and
-        put out work that means something to the people who make it and the people who receive it.
-        We're building something that lives at the intersection of ideas, community, and contemporary life. The full
-        picture is still coming into focus. What you see now is the beginning.
-        <br><br>
-        <a href="https://madebyether.com/index.html">ether</a>
-      </p>
-    </div>
-  </section>
+    </section>
 
-  <!-- GALLERY — stacking cards on scroll -->
-  <div class="cs-gallery" id="cs-gallery">
-    <div class="cs-gallery-sticky" id="gallery-sticky">
 
-      <div class="gallery-card" id="gcard-0">
-        <img
-          src="https://res.cloudinary.com/djmffrvpg/image/upload/v1775432883/ether_logo_black_whiteBackground_rforj9.jpg"
-          alt="ether image 1">
+    <!-- GALLERY — stacking cards on scroll -->
+    <div class="cs-gallery" id="cs-gallery">
+      <div class="cs-gallery-sticky" id="gallery-sticky">
+        <div class="gallery-card" id="gcard-0">
+          <img
+            src="https://res.cloudinary.com/djmffrvpg/image/upload/v1775432883/ether_logo_black_whiteBackground_rforj9.jpg"
+            alt="ether image 1"
+          />
+        </div>
       </div>
-
-      <div class="gallery-card" id="gcard-1">
-        <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1781928385/main-blue-site3_atfxlq.png"
-          alt="ether image 2">
-      </div>
-
     </div>
-  </div>
 
-  <!-- MORE WORK -->
-  <section class="cs-more">
-    <a href="main.html" class="btn-back">View All Work</a>
-  </section>
+    <!-- MORE WORK -->
+    <section class="cs-more">
+      <a href="strategy.html" class="btn-back">View All Work</a>
+    </section>
 
-  <script>
-    // As you scroll, each card sticks and the next one slides up over it
-    // Scale down cards that are "past" to give the stacking depth effect
-    const cards = document.querySelectorAll('.gallery-card');
+    <script>
+      // As you scroll, each card sticks and the next one slides up over it
+      // Scale down cards that are "past" to give the stacking depth effect
+      const cards = document.querySelectorAll(".gallery-card");
 
-    window.addEventListener('scroll', () => {
-      cards.forEach((card, i) => {
-        const rect = card.getBoundingClientRect();
-        const top = parseInt(getComputedStyle(card).top); // sticky top value
-        const distancePastSticky = top - rect.top;
+      window.addEventListener(
+        "scroll",
+        () => {
+          cards.forEach((card, i) => {
+            const rect = card.getBoundingClientRect();
+            const top = parseInt(getComputedStyle(card).top); // sticky top value
+            const distancePastSticky = top - rect.top;
 
-        if (distancePastSticky > 0) {
-          // card is stuck — scale it down as the next one approaches
-          const scale = Math.max(0.88, 1 - distancePastSticky * 0.0004);
-          const brightness = Math.max(0.6, 1 - distancePastSticky * 0.0008);
-          card.style.transform = `scale(${scale})`;
-          card.style.filter = `brightness(${brightness})`;
-        } else {
-          card.style.transform = 'scale(1)';
-          card.style.filter = 'brightness(1)';
-        }
-      });
-    }, { passive: true });
-  </script>
-
-</body>
-
+            if (distancePastSticky > 0) {
+              // card is stuck — scale it down as the next one approaches
+              const scale = Math.max(0.88, 1 - distancePastSticky * 0.0004);
+              const brightness = Math.max(0.6, 1 - distancePastSticky * 0.0008);
+              card.style.transform = `scale(${scale})`;
+              card.style.filter = `brightness(${brightness})`;
+            } else {
+              card.style.transform = "scale(1)";
+              card.style.filter = "brightness(1)";
+            }
+          });
+        },
+        { passive: true },
+      );
+    </script>
+  </body>
 </html>

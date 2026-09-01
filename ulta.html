@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ulta Beauty — Omolola Ogunlade</title>
+    <link rel="stylesheet" href="main.css" />
+    <style>
+      .cs-gallery {
+        height: auto;
+        background: var(--ash);
+        padding: 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .cs-gallery-sticky {
+        position: relative;
+        height: auto;
+        overflow: visible;
+        background: transparent;
+        display: block;
+      }
+
+      .gallery-card {
+        position: sticky;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
+        margin-bottom: 24px;
+        transform-origin: top center;
+      }
+
+      .gallery-card:last-child {
+        margin-bottom: 0;
+      }
+
+      .gallery-card:nth-child(1) {
+        top: 40px;
+        z-index: 1;
+      }
+      .gallery-card:nth-child(2) {
+        top: 60px;
+        z-index: 2;
+      }
+      .gallery-card:nth-child(3) {
+        top: 80px;
+        z-index: 3;
+      }
+
+      .gallery-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* Relay live-prototype frame */
+      .proto-frame {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        background: #0a0a0a;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow:
+          0 40px 80px rgba(0, 0, 0, 0.5),
+          0 0 0 1.5px rgba(255, 255, 255, 0.08);
+      }
+
+      .proto-frame-bar {
+        background: #111;
+        padding: 10px 16px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .proto-frame-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: block;
+      }
+
+      .proto-frame-screen {
+        width: 100%;
+        background: #f6f7fb;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .proto-frame-screen iframe {
+        width: 100%;
+        border: none;
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body class="cs-page">
+    <nav class="cs-nav">
+      <a href="strategy.html" class="cs-nav-inner">
+        <span>←</span><span>All Work</span>
+      </a>
+    </nav>
+
+    <div class="cs-hero">
+      <img
+        src="https://res.cloudinary.com/djmffrvpg/image/upload/v1788286746/Antara_3_zgoecy.webp"
+        class="cs-hero-img"
+        alt="Relay cover"
+      />
+      <div class="cs-hero-overlay">
+        <div class="cs-tag" style="color: #fff">
+          Workflow Systems Design · Digital Merchandising
+        </div>
+        <h1 class="cs-title" style="color: #fff">Ulta Beauty</h1>
+      </div>
+    </div>
+
+    <section class="cs-desc">
+      <div class="cs-desc-meta">
+        <div class="cs-meta-item">
+          <label>Relay</label>
+          <p>Cross-Functional Landing Page Request System</p>
+        </div>
+        <div class="cs-meta-item">
+          <label>Company</label>
+          <p>Ulta Beauty</p>
+        </div>
+        <div class="cs-meta-item">
+          <label>Category</label>
+          <p>Internal Enterprise Tool</p>
+        </div>
+        <div class="cs-meta-item">
+          <label>Deliverables</label>
+          <p>
+            Workflow System Design · Training Documentation · Leadership
+            Presentation
+          </p>
+        </div>
+        <div class="cs-meta-item">
+          <label>Tools</label>
+          <p>Monday.com · JIRA · Ecommerce Analytics</p>
+        </div>
+        <div class="cs-meta-item">
+          <label>Rollout</label>
+          <p>Company-Wide Training</p>
+        </div>
+        <div class="cs-meta-item">
+          <label>Also Co-Led</label>
+          <p>2023 Member Love Foundation Event, GTM</p>
+        </div>
+      </div>
+      <div class="cs-desc-text">
+        <p>
+          Landing page requests moved across social, marketing, and
+          merchandising the same way most cross-functional work does at scale:
+          through Teams threads, email chains, and whoever happened to be free.
+          Nobody outside the request had visibility into where it stood,
+          requestors couldn't make a small edit without resubmitting the whole
+          thing, and every "is this done yet?" cost someone else a context
+          switch. The dashboard was the system built to close that gap; a single
+          intake-to-notification workflow connecting every team touching a
+          landing page, with full training documentation and a presentation to
+          leadership behind it. It cut landing page turnaround time by 15%.
+
+          <br /><br />
+
+          The dashboard didn't end at the build. I wrote the training documentation and
+          presented the system to leadership myself, so adoption across social,
+          marketing, and merchandising was led by me. Around the same time, I co-led go-to-market execution for the
+          national Member Love Foundation Event, a campaign reaching 35M+
+          loyalty members across digital and social channels. Different scale of
+          work, same underlying skill: getting a cross-functional effort to
+          actually move together.
+        </p>
+      </div>
+    </section>
+
+    <section class="cs-gtm">
+      <p class="cs-gtm-eyebrow">Product Decisions</p>
+      <div class="cs-gtm-grid">
+        <div class="cs-gtm-col">
+          <p class="cs-gtm-col-label">Intake</p>
+          <p class="cs-gtm-col-title">A Form, Not a Thread</p>
+          <p class="cs-gtm-col-body">
+            Every request started as a different shape, a Teams message, an
+            email, a verbal ask in a meeting, which meant every request had to
+            be re-interpreted before work could start. The dashboard collapses intake
+            into one structured form: requestor, landing page name, SKUs. What
+            comes in is exactly what the team building the page needs, nothing
+            translated or lost along the way.
+          </p>
+          <div class="cs-gtm-tags">
+            <span class="cs-gtm-tag">Workflow Design</span>
+            <span class="cs-gtm-tag">Process</span>
+          </div>
+        </div>
+
+        <div class="cs-gtm-col">
+          <p class="cs-gtm-col-label">Visibility</p>
+          <p class="cs-gtm-col-title">One Board, Three Teams</p>
+          <p class="cs-gtm-col-body">
+            Social, marketing, and merchandising were each tracking landing page
+            status their own way, which meant no one had the same answer to
+            "where is this." This dashboard puts every request, and its generated URL,
+            on a single board all three teams read from, so status stops being a
+            question anyone has to ask.
+          </p>
+          <div class="cs-gtm-tags">
+            <span class="cs-gtm-tag">Cross-Functional Systems</span>
+            <span class="cs-gtm-tag">Operations</span>
+          </div>
+        </div>
+
+        <div class="cs-gtm-col">
+          <p class="cs-gtm-col-label">Feedback Loop</p>
+          <p class="cs-gtm-col-title">Edits Without Resubmitting</p>
+          <p class="cs-gtm-col-body">
+            A wrong SKU or a name change used to mean starting the request over.
+            This dashboard lets requestors edit what they already submitted in place, and
+            closes the loop automatically. A notification goes out the moment
+            their landing page, or their edit, is done, so nobody's checking in
+            to find out.
+          </p>
+          <div class="cs-gtm-tags">
+            <span class="cs-gtm-tag">Notification System</span>
+            <span class="cs-gtm-tag">UX</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HORIZONTAL EMBED — Relay live prototype -->
+    <section class="cs-embed cs-embed-horizontal">
+      <div class="cs-embed-label"><span>Live Prototype</span></div>
+      <div class="proto-frame">
+        <div class="proto-frame-bar">
+          <span class="proto-frame-dot" style="background: #ff5f57"></span>
+          <span class="proto-frame-dot" style="background: #ffbd2e"></span>
+          <span class="proto-frame-dot" style="background: #28c840"></span>
+        </div>
+        <div class="proto-frame-screen" id="relay-frame-screen">
+          <iframe
+            id="relay-iframe"
+            src="ulta-ux.html"
+            title="Relay prototype"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <div class="cs-gallery" id="cs-gallery">
+      <div class="cs-gallery-sticky" id="gallery-sticky">
+        <div class="gallery-card" id="gcard-0">
+          <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1788288471/ulta-dashboard-_pzlbxc.png" alt="Relay image 1" />
+        </div>
+        <div class="gallery-card" id="gcard-1">
+          <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1788288523/Screenshot_2026-09-01_at_2.35.41_PM_yo2v2j.png" alt="Relay image 2" />
+        </div>
+      </div>
+    </div>
+
+    <section class="cs-more">
+      <a href="strategy.html" class="btn-back">View All Work</a>
+    </section>
+
+    <script>
+      // ── Gallery scroll effect ──
+      const cards = document.querySelectorAll(".gallery-card");
+      window.addEventListener(
+        "scroll",
+        () => {
+          cards.forEach((card) => {
+            const rect = card.getBoundingClientRect();
+            const stickyTop = parseInt(getComputedStyle(card).top);
+            const distancePastSticky = stickyTop - rect.top;
+            if (distancePastSticky > 0) {
+              card.style.transform = `scale(${Math.max(0.88, 1 - distancePastSticky * 0.0004)})`;
+              card.style.filter = `brightness(${Math.max(0.6, 1 - distancePastSticky * 0.0008)})`;
+            } else {
+              card.style.transform = "scale(1)";
+              card.style.filter = "brightness(1)";
+            }
+          });
+        },
+        { passive: true },
+      );
+
+      // ── Auto-resize the Relay iframe to match its live content height ──
+      // Relay's height changes as the demo is used (submitting the form,
+      // opening the edit modal, notifying a requestor), so instead of a fixed
+      // aspect ratio, this keeps the iframe's height synced to real content.
+      function resizeRelayFrame() {
+        const iframe = document.getElementById("relay-iframe");
+        if (!iframe) return;
+        try {
+          const doc = iframe.contentDocument || iframe.contentWindow.document;
+          const height = doc.documentElement.scrollHeight;
+          if (height > 0) iframe.style.height = height + "px";
+        } catch (e) {
+          // Cross-origin fallback
+          iframe.style.height = "1400px";
+        }
+      }
+
+      const relayIframe = document.getElementById("relay-iframe");
+      if (relayIframe) {
+        relayIframe.addEventListener("load", () => {
+          resizeRelayFrame();
+          setTimeout(resizeRelayFrame, 300);
+          setTimeout(resizeRelayFrame, 1000);
+        });
+      }
+      window.addEventListener("resize", resizeRelayFrame);
+      setInterval(resizeRelayFrame, 1500);
+    </script>
+  </body>
+</html>
