@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aperture — Omolola Ogunlade</title>
+    <link rel="stylesheet" href="main.css" />
+    <style>
+      .cs-gallery {
+        height: auto;
+        background: var(--ash);
+        padding: 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .cs-gallery-sticky {
+        position: relative;
+        height: auto;
+        overflow: visible;
+        background: transparent;
+        display: block;
+      }
+
+      .gallery-card {
+        position: sticky;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
+        margin-bottom: 24px;
+        transform-origin: top center;
+      }
+
+      .gallery-card:last-child {
+        margin-bottom: 0;
+      }
+
+      .gallery-card:nth-child(1) {
+        top: 40px;
+        z-index: 1;
+      }
+      .gallery-card:nth-child(2) {
+        top: 60px;
+        z-index: 2;
+      }
+      .gallery-card:nth-child(3) {
+        top: 80px;
+        z-index: 3;
+      }
+      .gallery-card:nth-child(4) {
+        top: 80px;
+        z-index: 4;
+      }
+      .gallery-card:nth-child(5) {
+        top: 80px;
+        z-index: 5;
+      }
+
+      .gallery-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* Relay live-prototype frame */
+      .proto-frame {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        background: #0a0a0a;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow:
+          0 40px 80px rgba(0, 0, 0, 0.5),
+          0 0 0 1.5px rgba(255, 255, 255, 0.08);
+      }
+
+      .proto-frame-bar {
+        background: #111;
+        padding: 10px 16px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .proto-frame-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: block;
+      }
+
+      .proto-frame-screen {
+        width: 100%;
+        background: #f6f7fb;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .proto-frame-screen iframe {
+        width: 100%;
+        border: none;
+        display: block;
+        height: 820px;
+      }
+      .proto-mobile-fallback { display: none; }
+
+@media (max-width: 768px) {
+  .proto-frame-screen iframe { display: none; }
+  .proto-mobile-fallback { display: block; text-decoration: none; }
+  .proto-mobile-fallback img { width: 100%; display: block; }
+  .proto-mobile-fallback span {
+    display: block; padding: 14px 16px;
+    font-size: 14px; color: #0a0a0a; background: #f6f7fb;
+  }
+}
+    </style>
+  </head>
+
+  <body class="cs-page">
+    <nav class="cs-nav">
+      <a href="strategy.html" class="cs-nav-inner">
+        <span>←</span><span>All Work</span>
+      </a>
+    </nav>
+
+    <div class="cs-hero">
+      <img src="https://urbanpathways.org/wp-content/uploads/2024/03/9th-ave-4.jpg" class="cs-hero-img" alt="Relay cover" />
+      <div class="cs-hero-overlay">
+        <div class="cs-tag" style="color: #fff">
+          Client Deployment · Product Spec · CRM Systems
+        </div>
+        <h1 class="cs-title" style="color: #fff">Aperture</h1>
+      </div>
+    </div>
+
+    <section class="cs-desc">
+      <div class="cs-desc-meta">
+        <div class="cs-meta-item">
+          <label>Aperture</label>
+          <p>Intake CRM Prototype</p>
+        </div>
+        <div class="cs-meta-item">
+          <label>Organization</label>
+          <p>Urban Pathways (NYC nonprofit)</p>
+        </div>
+        <div class="cs-meta-item">
+          <label>Category</label>
+          <p>Internal Operations Tool</p>
+        </div>
+        <div class="cs-meta-item">
+          <label>Deliverables</label>
+          <p>Workflow Audit · Product Spec · Prototype · Compliance Review</p>
+        </div>
+        <div class="cs-meta-item">
+          <label>Tools</label>
+          <p>Base44</p>
+        </div>
+        <div class="cs-meta-item">
+          <label>Status</label>
+          <p>Prototype · Approved to Pilot by Compliance</p>
+        </div>
+      </div>
+      <div class="cs-desc-text">
+        <p>
+          Intake at Urban Pathways ran on spreadsheets and the intake
+          coordinator's memory. She carried the full picture of every case in
+          her head, which meant there was no shared view of who was waiting,
+          where each case stood, or what had already happened. Every follow-up
+          depended on her remembering to send it. Aperture was built to give
+          that process a structure: one system from first contact onward,
+          designed around how intake actually happened, not how a vendor CRM
+          assumes it does.
+
+          <br /><br />
+
+          Before building anything, I went to the head of compliance, not the
+          end user. That conversation confirmed there was no existing CRM or
+          internal system to conflict with. It also secured approval to workshop
+          the tool with the intake coordinator and integrate it if it worked.
+          From there, I met with the coordinator and translated her workflow
+          into five requirements: a backlog, stage tracking, a progress log,
+          automated communications, and a feedback loop. I weighed off-the-shelf
+          options like Airtable and Monday.com, then chose a custom build in
+          Base44 so the system could bend to her process instead of the reverse.
+          <br /><br />
+
+          Rollout then stalled on a client-side dependency. The coordinator
+          agreed to share her existing spreadsheets to populate and test the
+          system, and they never came through. That taught me the part of
+          deployment a spec can't cover. Access to data is a commitment you
+          secure before building, not after. Next time, that's the first
+          agreement on the table.
+        </p>
+      </div>
+    </section>
+
+    <section class="cs-gtm">
+      <p class="cs-gtm-eyebrow">Product Decisions</p>
+      <div class="cs-gtm-grid">
+        <div class="cs-gtm-col">
+          <p class="cs-gtm-col-label">Intake</p>
+          <p class="cs-gtm-col-title">One Record Per Case</p>
+          <p class="cs-gtm-col-body">
+            Every person entering intake gets a single record that carries their
+            current stage and a running progress log. The history of a case
+            lives in the system instead of across spreadsheets and one person's
+            memory, and a backlog view shows who's waiting at a glance.
+          </p>
+
+        </div>
+
+        <div class="cs-gtm-col">
+          <p class="cs-gtm-col-label">Compliance</p>
+          <p class="cs-gtm-col-title">Sanctioned Before Built:</p>
+          <p class="cs-gtm-col-body">
+            The first conversation was with compliance confirmed that no
+            competing system existed internally, and getting approval to pilot
+            before writing a line of spec, meant the tool had a path to adoption
+            from day one, not a hurdle at the end.
+          </p>
+ 
+        </div>
+
+        <div class="cs-gtm-col">
+          <p class="cs-gtm-col-label">Handoff</p>
+          <p class="cs-gtm-col-title">Follow-Ups That Don't Depend on Memory</p>
+          <p class="cs-gtm-col-body">
+            Automated communications handle routine follow-ups, so they go out
+            whether or not the coordinator remembers them, and a feedback loop
+            [confirm: feedback from whom, e.g. clients, staff, or the
+            coordinator herself] keeps the process improving as cases move
+            through.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HORIZONTAL EMBED — Relay live prototype -->
+    <section class="cs-embed cs-embed-horizontal">
+      <div class="cs-embed-label"><span>Live Prototype</span></div>
+      <div class="proto-frame">
+        <div class="proto-frame-bar">
+          <span class="proto-frame-dot" style="background: #ff5f57"></span>
+          <span class="proto-frame-dot" style="background: #ffbd2e"></span>
+          <span class="proto-frame-dot" style="background: #28c840"></span>
+        </div>
+         <div class="proto-frame-screen" id="aperture-frame-screen">
+            <iframe
+              id="aperture-iframe"
+              src="https://passionate-haven-track-flow.base44.app"
+              title="Aperture prototype"
+              loading="lazy"
+            ></iframe>
+            <a class="proto-mobile-fallback" href="PASTE-URL-HERE" target="_blank" rel="noopener">
+              <img src="APERTURE-SCREENSHOT.png" alt="Aperture dashboard" />
+              <span>Open the live prototype →</span>
+            </a>
+          </div>
+      </div>
+    </section>
+
+    <div class="cs-gallery" id="cs-gallery">
+      <div class="cs-gallery-sticky" id="gallery-sticky">
+        <div class="gallery-card" id="gcard-0">
+          <img
+            src="https://res.cloudinary.com/djmffrvpg/image/upload/v1790540664/Screenshot_2026-09-27_at_4.21.19_PM_rxdinp.png"
+            alt="Relay image 1"
+          />
+        </div>
+        <div class="gallery-card" id="gcard-1">
+          <img
+            src="https://res.cloudinary.com/djmffrvpg/image/upload/v1790540828/Screenshot_2026-09-27_at_4.27.02_PM_gq8h5h.png"
+            alt="Relay image 2"
+          />
+        </div>
+                <div class="gallery-card" id="gcard-3">
+          <img
+            src="https://res.cloudinary.com/djmffrvpg/image/upload/v1790540660/Screenshot_2026-09-27_at_4.22.44_PM_z56oo6.png"
+            alt="Relay image 1"
+          />
+        </div>
+                <div class="gallery-card" id="gcard-4">
+          <img
+            src="https://res.cloudinary.com/djmffrvpg/image/upload/v1790540660/Screenshot_2026-09-27_at_4.22.57_PM_dhyski.png"
+            alt="Relay image 1"
+          />
+        </div>
+                <div class="gallery-card" id="gcard-5">
+          <img
+            src="https://res.cloudinary.com/djmffrvpg/image/upload/v1790540660/Screenshot_2026-09-27_at_4.23.56_PM_mnbqug.png"
+            alt="Relay image 1"
+          />
+        </div>
+      </div>
+    </div>
+
+    <section class="cs-more">
+      <a href="strategy.html" class="btn-back">View All Work</a>
+    </section>
+
+    <script>
+      // ── Gallery scroll effect ──
+      const cards = document.querySelectorAll(".gallery-card");
+      window.addEventListener(
+        "scroll",
+        () => {
+          cards.forEach((card) => {
+            const rect = card.getBoundingClientRect();
+            const stickyTop = parseInt(getComputedStyle(card).top);
+            const distancePastSticky = stickyTop - rect.top;
+            if (distancePastSticky > 0) {
+              card.style.transform = `scale(${Math.max(0.88, 1 - distancePastSticky * 0.0004)})`;
+              card.style.filter = `brightness(${Math.max(0.6, 1 - distancePastSticky * 0.0008)})`;
+            } else {
+              card.style.transform = "scale(1)";
+              card.style.filter = "brightness(1)";
+            }
+          });
+        },
+        { passive: true },
+      );
+
+      // ── Auto-resize the Relay iframe to match its live content height ──
+      // Relay's height changes as the demo is used (submitting the form,
+      // opening the edit modal, notifying a requestor), so instead of a fixed
+      // aspect ratio, this keeps the iframe's height synced to real content.
+      function resizeRelayFrame() {
+        const iframe = document.getElementById("relay-iframe");
+        if (!iframe) return;
+        try {
+          const doc = iframe.contentDocument || iframe.contentWindow.document;
+          const height = doc.documentElement.scrollHeight;
+          if (height > 0) iframe.style.height = height + "px";
+        } catch (e) {
+          // Cross-origin fallback
+          iframe.style.height = "1400px";
+        }
+      }
+
+      const relayIframe = document.getElementById("relay-iframe");
+      if (relayIframe) {
+        relayIframe.addEventListener("load", () => {
+          resizeRelayFrame();
+          setTimeout(resizeRelayFrame, 300);
+          setTimeout(resizeRelayFrame, 1000);
+        });
+      }
+      window.addEventListener("resize", resizeRelayFrame);
+      setInterval(resizeRelayFrame, 1500);
+    </script>
+  </body>
+</html>
