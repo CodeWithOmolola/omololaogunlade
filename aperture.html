@@ -172,34 +172,26 @@
       </div>
       <div class="cs-desc-text">
         <p>
-          Intake at Urban Pathways ran on spreadsheets and the intake
-          coordinator's memory. She carried the full picture of every case in
-          her head, which meant there was no shared view of who was waiting,
-          where each case stood, or what had already happened. Every follow-up
-          depended on her remembering to send it. Aperture was built to give
-          that process a structure: one system from first contact onward,
-          designed around how intake actually happened, not how a vendor CRM
-          assumes it does.
-
-          <br /><br />
-
-          Before building anything, I went to the head of compliance, not the
-          end user. That conversation confirmed there was no existing CRM or
-          internal system to conflict with. It also secured approval to workshop
-          the tool with the intake coordinator and integrate it if it worked.
-          From there, I met with the coordinator and translated her workflow
-          into five requirements: a backlog, stage tracking, a progress log,
-          automated communications, and a feedback loop. I weighed off-the-shelf
-          options like Airtable and Monday.com, then chose a custom build in
-          Base44 so the system could bend to her process instead of the reverse.
-          <br /><br />
-
-          Rollout then stalled on a client-side dependency. The coordinator
-          agreed to share her existing spreadsheets to populate and test the
-          system, and they never came through. That taught me the part of
-          deployment a spec can't cover. Access to data is a commitment you
-          secure before building, not after. Next time, that's the first
-          agreement on the table.
+          Urban Pathways' intake process relied on spreadsheets and the intake coordinator's memory. There was no shared view of the intake backlog, case stage, or follow-up history, and routine communications depended on manual follow-up.The opportunity was to turn an individual-dependent workflow into a shared intake system without forcing the organization into a generic CRM structure.
+          <br /><br /> 
+          I mapped the coordinator's existing intake process and translated it into five product requirements:
+<br /><br />
+01 · Backlog
+A single view of people currently waiting for intake.
+<br />
+02 · Stage Tracking
+A clear indication of where each case sits in the intake process.
+<br />
+03 · Progress Log
+A persistent record of activity and case history.
+<br />
+04 · Automated Follow-Up
+Routine communications that do not depend on the coordinator remembering to send them.
+<br />
+05 · Feedback Loop
+Visibility into responses and where cases stall after follow-up.
+<br /><br />
+Before building, I also reviewed the proposed workflow with compliance to confirm there was no existing CRM or internal system conflict and secure approval to workshop the prototype with the intake coordinator.
         </p>
       </div>
     </section>
@@ -209,35 +201,51 @@
       <div class="cs-gtm-grid">
         <div class="cs-gtm-col">
           <p class="cs-gtm-col-label">Intake</p>
-          <p class="cs-gtm-col-title">One Record Per Case</p>
           <p class="cs-gtm-col-body">
-            Every person entering intake gets a single record that carries their
-            current stage and a running progress log. The history of a case
-            lives in the system instead of across spreadsheets and one person's
-            memory, and a backlog view shows who's waiting at a glance.
+            Each person entering intake receives a single record containing their current stage and running progress history. This creates a shared source of truth while making the active backlog visible at a glance.
           </p>
 
         </div>
 
         <div class="cs-gtm-col">
-          <p class="cs-gtm-col-label">Compliance</p>
-          <p class="cs-gtm-col-title">Sanctioned Before Built:</p>
+          <p class="cs-gtm-col-label">Workflow & Compliance</p>
           <p class="cs-gtm-col-body">
-            That conversation secured approval to pilot and confirmed no competing system existed, giving the tool organizational clearance before I built it.
+            Rather than adapting the organization to a generic CRM workflow, the prototype was structured around the coordinator's actual intake process. This was the primary reason for pursuing a custom build rather than adopting an off-the-shelf workflow.
+            Compliance review happened before implementation. The review confirmed that no competing internal system existed and cleared the prototype for pilot use.
           </p>
  
         </div>
 
         <div class="cs-gtm-col">
-          <p class="cs-gtm-col-label">Handoff</p>
-          <p class="cs-gtm-col-title">Follow-Ups That Don't Depend on Memory</p>
+          <p class="cs-gtm-col-label">Follow-Up</p>
           <p class="cs-gtm-col-body">
-            Automated communications handle routine follow-ups, so they go out
-            whether or not the coordinator remembers them, and a feedback loop keeps the process improving as cases move
-            through. <br/>
-            Feedback Loop — Capture what happens after follow-up so the coordinator can see which communications resulted in a response and where cases are getting stuck.
+            Routine communications are triggered through the system rather than relying on individual memory. The feedback loop captures what happens after outreach, making it possible to see responses and identify where cases are getting stuck.
           </p>
 
+        </div>
+      </div>
+    </section>
+
+     <section class="cs-gtm">
+      <p class="cs-gtm-eyebrow">Deployment Constraint</p>
+      <div class="cs-gtm-grid">
+        <div class="cs-gtm-col">
+          <p class="cs-gtm-col-body">
+           The prototype reached approval to pilot, but implementation depended on access to the coordinator's existing spreadsheets for data population and testing. That dependency was never fulfilled, preventing the pilot from moving forward.
+            <br/>
+          The deployment lesson was straightforward: data access is a product dependency, not a post-build detail. In future implementations, access requirements and ownership would be established before prototype completion.
+          </p>
+
+        </div>
+
+        <div class="cs-gtm-col">
+          <p class="cs-gtm-col-label">Results</p>
+          <p class="cs-gtm-col-body">
+Aperture translated a memory- and spreadsheet-dependent intake process into a structured CRM prototype with:
+   <br/>   <br/>
+A centralized intake backlog, Case-stage visibility, Persistent progress history, Automated follow-up, Post-outreach feedback tracking, Compliance approval for pilot          
+          </p>
+ 
         </div>
       </div>
     </section>
