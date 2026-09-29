@@ -176,19 +176,19 @@
           <br /><br /> 
           I mapped the coordinator's existing intake process and translated it into five product requirements:
 <br /><br />
-01 · Backlog
+01 · Backlog:
 A single view of people currently waiting for intake.
 <br />
-02 · Stage Tracking
+02 · Stage Tracking:
 A clear indication of where each case sits in the intake process.
 <br />
-03 · Progress Log
+03 · Progress Log:
 A persistent record of activity and case history.
 <br />
-04 · Automated Follow-Up
+04 · Automated Follow-Up:
 Routine communications that do not depend on the coordinator remembering to send them.
 <br />
-05 · Feedback Loop
+05 · Feedback Loop:
 Visibility into responses and where cases stall after follow-up.
 <br /><br />
 Before building, I also reviewed the proposed workflow with compliance to confirm there was no existing CRM or internal system conflict and secure approval to workshop the prototype with the intake coordinator.
@@ -259,18 +259,18 @@ A centralized intake backlog, Case-stage visibility, Persistent progress history
           <span class="proto-frame-dot" style="background: #ffbd2e"></span>
           <span class="proto-frame-dot" style="background: #28c840"></span>
         </div>
-         <div class="proto-frame-screen" id="aperture-frame-screen">
-            <iframe
-              id="aperture-iframe"
-              src="https://passionate-haven-track-flow.base44.app"
-              title="Aperture prototype"
-              loading="lazy"
-            ></iframe>
-            <a class="proto-mobile-fallback" href="PASTE-URL-HERE" target="_blank" rel="noopener">
-              <img src="APERTURE-SCREENSHOT.png" alt="Aperture dashboard" />
-              <span>Open the live prototype →</span>
-            </a>
-          </div>
+      <div class="proto-frame-screen" id="aperture-frame-screen">
+  <iframe
+    id="aperture-iframe"
+    src="https://passionate-haven-track-flow.base44.app"
+    title="Aperture prototype"
+    loading="lazy"
+  ></iframe>
+  <a class="proto-mobile-fallback" href="https://passionate-haven-track-flow.base44.app" target="_blank" rel="noopener">
+    <img src="https://res.cloudinary.com/djmffrvpg/image/upload/v1790540664/Screenshot_2026-09-27_at_4.21.19_PM_rxdinp.png" alt="Aperture dashboard" />
+    <span>Open the live prototype →</span>
+  </a>
+</div>
       </div>
     </section>
 
@@ -341,33 +341,6 @@ A centralized intake backlog, Case-stage visibility, Persistent progress history
         { passive: true },
       );
 
-      // ── Auto-resize the Relay iframe to match its live content height ──
-      // Relay's height changes as the demo is used (submitting the form,
-      // opening the edit modal, notifying a requestor), so instead of a fixed
-      // aspect ratio, this keeps the iframe's height synced to real content.
-      function resizeRelayFrame() {
-        const iframe = document.getElementById("relay-iframe");
-        if (!iframe) return;
-        try {
-          const doc = iframe.contentDocument || iframe.contentWindow.document;
-          const height = doc.documentElement.scrollHeight;
-          if (height > 0) iframe.style.height = height + "px";
-        } catch (e) {
-          // Cross-origin fallback
-          iframe.style.height = "1400px";
-        }
-      }
-
-      const relayIframe = document.getElementById("relay-iframe");
-      if (relayIframe) {
-        relayIframe.addEventListener("load", () => {
-          resizeRelayFrame();
-          setTimeout(resizeRelayFrame, 300);
-          setTimeout(resizeRelayFrame, 1000);
-        });
-      }
-      window.addEventListener("resize", resizeRelayFrame);
-      setInterval(resizeRelayFrame, 1500);
     </script>
   </body>
 </html>
